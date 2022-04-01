@@ -178,7 +178,7 @@ def define_compose(NC, IMG_SIZE): # define compose based on NUM_CHANNELS, IMG_SI
             transforms.Resize((IMG_SIZE,IMG_SIZE)),
             transforms.Grayscale(),
             transforms.ToTensor(),
-            transforms.Normalize((.5,.5,.5),(.5,.5,.5))
+            transforms.Normalize(mean=0.5, std=0.5)
         ])
     elif NC == 3: #rgb
         compose = transforms.Compose([
