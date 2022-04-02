@@ -1,0 +1,9 @@
+# torch; use command: conda install pytorch torchvision torchaudio -c pytorch
+# torchvision
+scipy
+scikit-learn
+matplotlib
+scikit-image
+jupyter
+PyWavelets
+nb_conda
