@@ -6,6 +6,12 @@ import baselines
 
 import utils
 import time
+import sys
+
+default_print = print
+def print(*args):
+    default_print(*args)
+    sys.stdout.flush()
 
 args = parser.parse_args('configs.json') 
 
@@ -20,6 +26,9 @@ loss_re, recons_re = utils.init_output_arrays(args)
 def dip_estimator(args):
     def estimator(A_val, y_batch_val, args):
 
+        total_t0 = time.perf_counter()
+        print(f"Starting DIP estimation at time {round(total_t0, 2)}")
+
         y = torch.FloatTensor(y_batch_val).type(dtype) # init measurements y
         A = torch.FloatTensor(A_val).type(dtype)       # init measurement matrix A
 
@@ -27,6 +36,9 @@ def dip_estimator(args):
 
         for j in range(args.NUM_RESTARTS):
             
+            t0 = time.perf_counter()
+            print(f" Starting restart {j+1} of {args.NUM_RESTARTS} at time {round(t0, 2)}")
+
             net = utils.init_dcgan(args)
 
             z = torch.zeros(BATCH_SIZE*args.Z_DIM).type(dtype).view(BATCH_SIZE,args.Z_DIM,1,1)
@@ -68,11 +80,21 @@ def dip_estimator(args):
                 total_loss.backward() # backprop
                 optim.step()
 
+            # save reconstruction with smallest loss
+            # across all optimization iterations
             recons_re[j] = recons_iter[idx_iter]       
             loss_re[j] = y_loss.data.cpu().numpy()
 
+            print(f"  Finished restart {j+1} of {args.NUM_RESTARTS}")
+            print(f"  Best Loss {loss_re[j]}")
+            print(f"  Time {round(time.perf_counter() - t0, 2)} seconds")
+            print()
+
+        # return the reconstruction with smallest loss
+        # across all restarts/optimization iterations
         idx_re = np.argmin(loss_re,axis=0)
         x_hat = recons_re[idx_re]
+        print(f"Finished DIP in {round(time.perf_counter() - total_t0)} seconds")
 
         return x_hat
 

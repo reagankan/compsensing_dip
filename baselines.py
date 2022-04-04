@@ -3,15 +3,24 @@ import scipy.fftpack as fftpack
 import pywt
 import copy
 import numpy as np
+import time
+import sys
+
+default_print = print
+def print(*args):
+    default_print(*args)
+    sys.stdout.flush()
 
 LMBD = 1e-5
 
 def solve_lasso(A_val, y_val, lmbd=1e-1):
+    print("    solving lasso")
     num_measurements = y_val.shape[0]
     lasso_est = Lasso(alpha=lmbd)#,tol=1e-4,selection='random')
     lasso_est.fit(A_val.T, y_val.reshape(num_measurements))
     x_hat = lasso_est.coef_
     x_hat = np.reshape(x_hat, [-1])
+    print("    finished lasso")
     return x_hat
 
 def dct2(image_channel):
@@ -47,13 +56,21 @@ def lasso_dct_estimator(args):  #pylint: disable = W0613
     def estimator(A_val, y_batch_val, args):
         # One can prove that taking 2D DCT of each row of A,
         # then solving usual LASSO, and finally taking 2D ICT gives the correct answer.
+        total_t0 = time.perf_counter()
+        print(f"Starting DCT(lasso) estimation at time {round(total_t0, 2)}")
+
         A_new = copy.deepcopy(A_val)
         for i in range(A_val.shape[1]):
+            t0 = time.perf_counter()
             A_new[:, i] = vec([dct2(channel) for channel in devec(A_new[:, i],args.NUM_CHANNELS)],args.NUM_CHANNELS)
+            print(f"  finished DCT iteration {i} of {A_val.shape[1]} in {round(time.perf_counter() - t0, 2)} seconds")
+
         y_val = y_batch_val[0]
         z_hat = solve_lasso(A_new, y_val, LMBD)
         x_hat = vec([idct2(channel) for channel in devec(z_hat,args.NUM_CHANNELS)],args.NUM_CHANNELS).T
         x_hat = np.maximum(np.minimum(x_hat, 1), -1)
+        print(f"Finished DCT(lasso) estimation at time {round(time.perf_counter() - total_t0, 2)}")
+
         return x_hat
     return estimator
 
@@ -62,15 +79,23 @@ def lasso_wavelet_estimator(args):  #pylint: disable = W0613
     def estimator(A_val, y_batch_val, args):
         # One can prove that taking 2D DWT of each row of A,
         # then solving usual LASSO, and finally taking 2D IWT gives the correct answer.
+        total_t0 = time.perf_counter()
+        print(f"Starting wavelet(lasso) estimation at time {round(total_t0, 2)}")
+
         A_new = copy.deepcopy(A_val)
         arr, coeff_slices = db4(devec(A_new[:,0],args.NUM_CHANNELS)[0])
         A_wav = np.zeros((args.NUM_CHANNELS*arr.shape[0]*arr.shape[1],A_val.shape[1]))
         for i in range(A_val.shape[1]):
+            t0 = time.perf_counter()
             A_wav[:, i] = vec([db4(channel)[0] for channel in devec(A_new[:, i],args.NUM_CHANNELS)],args.NUM_CHANNELS)
+            print(f"  finished wavelet iteration {i} of {A_val.shape[1]} in {round(time.perf_counter() - t0, 2)} seconds")
+
         y_val = y_batch_val[0]
         z_hat = solve_lasso(A_wav, y_val, LMBD)
         x_hat = vec([idb4(channel,coeff_slices) for channel in devec(z_hat,args.NUM_CHANNELS)],args.NUM_CHANNELS).T
         x_hat = np.maximum(np.minimum(x_hat, 1), -1)
+        print(f"Finished wavelet(lasso) estimation at time {round(time.perf_counter() - total_t0, 2)}")
+
         return x_hat
     return estimator
 
