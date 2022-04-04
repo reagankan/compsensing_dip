@@ -35,6 +35,7 @@ def dip_estimator(args):
         mu, sig_inv, tvc, lrc = utils.get_constants(args, dtype)
 
         for j in range(args.NUM_RESTARTS):
+            # rkan3 TODO: load in pretrained weights
             
             t0 = time.perf_counter()
             print(f" Starting restart {j+1} of {args.NUM_RESTARTS} at time {round(t0, 2)}")
@@ -46,6 +47,8 @@ def dip_estimator(args):
             if CUDA:
                 net.cuda() # cast network to GPU if available
             
+            # rkan3: RMSProp, lr, momentum (used by both papers, src=DIP)
+            # solves inverse problem using un/pre-trained network
             optim = torch.optim.RMSprop(net.parameters(),lr=0.001, momentum=0.9, weight_decay=0)
             loss_iter = []
             recons_iter = [] 

@@ -108,6 +108,19 @@ class DCGAN_RETINO(nn.Module):
        
         return x
 
+def pretrain(net, args):
+    data_path = args.PRETRAIN_DATA_PATH
+    model_path = args.PRETRAIN_MODEL_PATH
+
+    if args.DATASET == 'xray':
+        raise NotImplementedError("rkan3 pretrain xray")
+    elif args.DATASET == 'mnist':
+        print("rkan3: pretraining mnist")
+    elif args.DATASET == 'retino':
+        raise NotImplementedError("rkan3 pretrain retino")
+
+    return net
+
 NGF = 64
 def init_dcgan(args):
 
@@ -120,6 +133,12 @@ def init_dcgan(args):
     elif args.DATASET == 'retino':
         net = DCGAN_RETINO(args.Z_DIM, NGF, args.IMG_SIZE,\
             args.NUM_CHANNELS, args.NUM_MEASUREMENTS)
+
+    # rkan3 TODO: load pretrain weights
+    # o.w. pretrain and save weights
+    if args.PRETRAIN:
+        net = pretrain()
+
     return net
 
 def init_output_arrays(args):
