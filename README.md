@@ -1,4 +1,35 @@
-# Compressed Sensing with Deep Image Prior
+# Deep Image Prior for Compressive Sensing with Low Shot Learning and Learned Regularization
+
+**Reagan Kan  
+Georgia Tech  
+Spring 2022 CSE 8803-IDM Final Project**  
+
+This repository (forked from [Compressed Sensing with Deep Image Prior](https://github.com/davevanveen/compsensing_dip)) provides code for the final project for the Spring 2022 course [CSE 8803-IDM Imaging with data-driven models](https://flexie.github.io/CSE-8803/) at Georgia Tech.
+
+The proposed methodology (**`csdip+{num_shots}`**) is a hybrid of the learned regularization from [**Compressed Sensing with Deep Image Prior and Learned Regularization**](https://arxiv.org/pdf/1806.06438.pdf) (**`csdip`**) and low shot pre-training from [**Low Shot Learning with Untrained Neural Networks for Imaging Inverse Problems**](https://arxiv.org/pdf/1910.10797.pdf).
+
+More details on the proposed methodology and experiment conclusions can be found in the following:
+- [Project Proposal](https://docs.google.com/document/d/1gct7M7HHML8W3GIbRsC2FNo0RVHoUHDUl29gsbPmSGs/edit?usp=sharing)
+    - (update): Algorithm 1 is not implemented. Instead, pre-existing learned regularization parameters are used in experiments.
+- [Project Presentation](https://docs.google.com/presentation/d/1c1cweUurac37nu8uc4AZj3bMZYWgy6U41p2nVMTA7W0/edit?usp=sharing)
+- [Project Report]() 
+
+
+Here are the results of comparing (**`csdip`**) and (**`csdip+{num_shots}`**) on the STARE retinopathy dataset:
+
+<center><img src="presentation_plots/retino_psnr_percent_change.png" alt="mnist_reconstr" width="400"></center>
+
+Least noisy & compressed                 | Most noisy & compressed
+-----------------------------------------|-----------------------------------------
+<img src="presentation_plots/retino_0var_8000meas.png" alt="mnist_reconstr" width="400"> | <img src="presentation_plots/retino_1000var_1000meas.png" alt="mnist_reconstr" width="400">
+
+PSNR vs noise variance                 | PSNR vs number of measurements
+-----------------------------------------|-----------------------------------------
+<img src="presentation_plots/retino_psnr_vs_noise.png" alt="mnist_reconstr" width="400"> | <img src="presentation_plots/retino_psnr_vs_meas.png" alt="mnist_reconstr" width="400">
+
+---
+
+## Compressed Sensing with Deep Image Prior
 
 This repository provides code to reproduce results from the paper: [Compressed Sensing with Deep Image Prior and Learned Regularization](https://arxiv.org/pdf/1806.06438.pdf). 
 
@@ -14,14 +45,17 @@ MNIST at 75 measurements                 | X-ray at 2000 measurements
 
 1. Clone the repository
     ```shell
-    $ git clone https://github.com/davevanveen/compsensing_dip.git
+    $ git clone https://github.com/reagankan/compsensing_dip.git
     $ cd compsensing_dip
+    $ git pull origin python3
     ```
     Please run all commands from the root directory of the repository, i.e from ```compsensing_dip/```
 
 2. Install requirements
     ```shell
-    $ pip install -r requirements.txt
+    $ conda create -n <env name> python=3.9.11
+    $ conda activate <env name>
+    $ conda install --file requirements3.txt
     ```
 
 
