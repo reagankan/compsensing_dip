@@ -1,18 +1,18 @@
 {
 	"data_agnostic_configs": {
 		"demo": "True",
-		"dataset": "xray",
+		"dataset": "mnist",
 		"alg": "csdip",
 		"learning_rate": 0.001,
 		"momentum": 0.9,
    	    "weight_decay": 0,
-		"num_iterations": 1000,
+		"num_iterations": 10000,
     	"l1_lambda":1e-5,
     	"variance_list": [0, 10, 100, 1000],
     	"pretrain": {
     		"init_pretrain": {
     			"loss": "L2", 
-    			"num_shots": 0,
+    			"num_shots": 50,
     			"num_iterations": 50000,
     			"learning_rate": 1e-3
     		},
@@ -26,7 +26,7 @@
 	"xray": {
 		"img_size": 256,
 		"num_channels": 1,
-		"num_measurements": 500,
+		"num_measurements": 1000,
 		"z_dim": 64,
 		"num_restarts": 1,
     	"lr_folder": "./learned_regularization/xray/"
@@ -42,7 +42,7 @@
 	"retino": {
 		"img_size": 128,
 		"num_channels": 3,
-		"num_measurements": 8000,
+		"num_measurements": 1000,
 		"num_restarts": 1,
 		"z_dim": 32,
 	"lr_folder": "./learned_regularization/retino/"

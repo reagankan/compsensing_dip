@@ -6,18 +6,18 @@
 		"learning_rate": 0.001,
 		"momentum": 0.9,
    	    "weight_decay": 0,
-		"num_iterations": 1000,
+		"num_iterations": 1,
     	"l1_lambda":1e-5,
     	"variance_list": [0, 10, 100, 1000],
     	"pretrain": {
     		"init_pretrain": {
     			"loss": "L2", 
-    			"num_shots": 0,
-    			"num_iterations": 50000,
+    			"num_shots": 15,
+    			"num_iterations": 1,
     			"learning_rate": 1e-3
     		},
     		"init_latent_codes": {
-    			"num_iterations": 1250,
+    			"num_iterations": 1,
     			"learning_rate": 5e-2
     		}
 
@@ -42,7 +42,7 @@
 	"retino": {
 		"img_size": 128,
 		"num_channels": 3,
-		"num_measurements": 8000,
+		"num_measurements": [4000],
 		"num_restarts": 1,
 		"z_dim": 32,
 	"lr_folder": "./learned_regularization/retino/"
