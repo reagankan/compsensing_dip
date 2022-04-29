@@ -15,9 +15,14 @@ retino_demo/sub
 xray/sub
 xray_demo/sub
 baselines_matlab/
-reconstructions/
-*.npy
 dataspecific_scripts
+
+reconstructions_1k_iters/
+reconstructions_april4_plotipynb/
+reconstructions_april8_idk/
+reconstructions_friapr7/
+reconstructions_test/
+reconstructions_test1/
 
 pretrained_weights_100shots.zip
 pretrained_weights_fri_april7/
