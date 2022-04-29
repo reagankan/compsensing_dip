@@ -1,0 +1,179 @@
+
+===xray
+---test-csdip+pretrain
+python comp_sensing.py --ALG csdip --PRETRAIN > logs/xray/15shots_500meas.out 2> logs/xray/15shots_500meas.err &
+
+python comp_sensing.py --ALG csdip --PRETRAIN > logs/xray/15shots_2000meas.out 2> logs/xray/15shots_2000meas.err &
+
+python comp_sensing.py --ALG csdip --PRETRAIN > logs/xray/15shots_8000meas.out 2> logs/xray/15shots_8000meas.err &
+
+-extra n_meas
+
+python comp_sensing.py --ALG csdip --PRETRAIN > logs/xray/15shots_1000meas.out 2> logs/xray/15shots_1000meas.err &
+
+python comp_sensing.py --ALG csdip --PRETRAIN > logs/xray/15shots_4000meas.out 2> logs/xray/15shots_4000meas.err &
+
+---baselines
+
+===================
+
+===retino-csdip+pretrain
+python comp_sensing.py --ALG csdip --PRETRAIN > logs/retino/15shots_8000meas.out 2> logs/retino/15shots_8000meas.err &
+
+python comp_sensing.py --ALG csdip --PRETRAIN > logs/retino/15shots_4000meas.out 2> logs/retino/15shots_4000meas.err &
+
+python comp_sensing.py --ALG csdip --PRETRAIN > logs/retino/15shots_1000meas.out 2> logs/retino/15shots_1000meas.err &
+---
+python comp_sensing.py --ALG csdip > logs/retino/0shots_8000meas.out 2> logs/retino/0shots_8000meas.err &
+
+python comp_sensing.py --ALG csdip > logs/retino/0shots_4000meas.out 2> logs/retino/0shots_4000meas.err &
+
+python comp_sensing.py --ALG csdip > logs/retino/0shots_1000meas.out 2> logs/retino/0shots_1000meas.err &
+===============
+
+python comp_sensing.py --ALG csdip --PRETRAIN > logs/100shots_200meas.out 2> logs/100shots_200meas.err &
+
+python comp_sensing.py --ALG csdip --PRETRAIN > logs/50shots.out 2> logs/50shots.err &
+
+python comp_sensing.py --ALG csdip --PRETRAIN > logs/10shots_50_200_meas.out 2> logs/10shots_50_200_meas.err &
+
+python comp_sensing.py --ALG csdip > logs/0shots.out 2> logs/0shots.err &
+
+python comp_sensing.py --ALG csdip --PRETRAIN > logs/100shots_50meas.out 2> logs/100shots_50meas.err &
+
+caffeinate -w 36388 
+
+ps -ef | egrep "GMC|PID|python comp_sensing"
+
+python comp_sensing.py --DATASET mnist --NUM_MEASUREMENTS 100 --ALG csdip --PRETRAIN
+
+
+TODO
+change dataloader to look in reconstructions folder
+
+(imaging) lawn-128-61-41-144:compsensing_dip reagankan$ python comp_sensing.py 
+Namespace(DATASET='mnist', ALG='csdip', NUM_MEASUREMENTS=100, DEMO='True', NUM_ITER=1000, NUM_RESTARTS=5, IMG_SIZE=28, NUM_CHANNELS=1, Z_DIM=128, LR_FOLDER='./learned_regularization/mnist/')
+/Users/reagankan/Reagan_GT/spring2022/imaging/compsensing_dip/reconstructions/mnist/csdip/meas100/im1.npy
+/Users/reagankan/Reagan_GT/spring2022/imaging/compsensing_dip/reconstructions/mnist/csdip/meas100/im2.npy
+/Users/reagankan/Reagan_GT/spring2022/imaging/compsensing_dip/reconstructions/mnist/csdip/meas100/im3.npy
+/Users/reagankan/Reagan_GT/spring2022/imaging/compsensing_dip/reconstructions/mnist/csdip/meas100/im4.npy
+^CTraceback (most recent call last):
+  File "/Users/reagankan/Reagan_GT/spring2022/imaging/compsensing_dip/comp_sensing.py", line 59, in <module>
+    x_hat = estimator(A, y, args)
+  File "/Users/reagankan/Reagan_GT/spring2022/imaging/compsensing_dip/cs_dip.py", line 69, in estimator
+    optim.step()
+  File "/Users/reagankan/miniconda3/envs/imaging/lib/python3.9/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/reagankan/miniconda3/envs/imaging/lib/python3.9/site-packages/torch/autograd/grad_mode.py", line 27, in decorate_context
+    return func(*args, **kwargs)
+  File "/Users/reagankan/miniconda3/envs/imaging/lib/python3.9/site-packages/torch/optim/rmsprop.py", line 135, in step
+    F.rmsprop(params_with_grad,
+  File "/Users/reagankan/miniconda3/envs/imaging/lib/python3.9/site-packages/torch/optim/_functional.py", line 264, in rmsprop
+    param.add_(buf, alpha=-lr)
+KeyboardInterrupt
+
+
+
+(imaging) lawn-128-61-41-144:compsensing_dip reagankan$ ls -alt reconstructions/mnist/csdip/meas100/
+total 80
+-rw-r--r--  1 reagankan  staff  6400 Apr  2 14:40 im5.npy
+drwxr-xr-x  7 reagankan  staff   224 Apr  2 14:40 .
+-rw-r--r--  1 reagankan  staff  6400 Apr  2 14:37 im4.npy
+-rw-r--r--  1 reagankan  staff  6400 Apr  2 14:35 im3.npy
+-rw-r--r--  1 reagankan  staff  6400 Apr  1 20:05 im2.npy
+-rw-r--r--  1 reagankan  staff  6400 Apr  1 20:02 im1.npy
+drwxr-xr-x  4 reagankan  staff   128 Apr  1 20:02 ..
+(imaging) lawn-128-61-41-144:compsensing_dip reagankan$ 
+
+
+
+(imaging) lawn-128-61-41-144:compsensing_dip reagankan$ python comp_sensing.py --DATASET mnist --NUM_MEASUREMENTS 100 --ALG csdip
+Namespace(DATASET='mnist', ALG=['csdip'], NUM_MEASUREMENTS=[100], DEMO='True', NUM_ITER=1000, NUM_RESTARTS=5, IMG_SIZE=28, NUM_CHANNELS=1, Z_DIM=128, LR_FOLDER='./learned_regularization/mnist/')
+image_direc data/mnist_demo/
+/Users/reagankan/Reagan_GT/spring2022/imaging/compsensing_dip/reconstructions/mnist/csdip/meas100/im1.npy
+/Users/reagankan/Reagan_GT/spring2022/imaging/compsensing_dip/reconstructions/mnist/csdip/meas100/im2.npy
+/Users/reagankan/Reagan_GT/spring2022/imaging/compsensing_dip/reconstructions/mnist/csdip/meas100/im3.npy
+Starting DIP estimation at time 1.49
+ Starting restart 1 of 5 at time 1.49
+  Finished restart 1 of 5
+  Best Loss [173.90092468]
+  Time 32.29 seconds
+
+ Starting restart 2 of 5 at time 33.78
+  Finished restart 2 of 5
+  Best Loss [173.90092468]
+  Time 32.15 seconds
+
+ Starting restart 3 of 5 at time 65.93
+  Finished restart 3 of 5
+  Best Loss [173.90092468]
+  Time 32.27 seconds
+
+ Starting restart 4 of 5 at time 98.2
+  Finished restart 4 of 5
+  Best Loss [173.90092468]
+  Time 32.13 seconds
+
+ Starting restart 5 of 5 at time 130.33
+  Finished restart 5 of 5
+  Best Loss [173.90092468]
+  Time 32.14 seconds
+
+Finished DIP in 161 seconds
+/Users/reagankan/Reagan_GT/spring2022/imaging/compsensing_dip/reconstructions/mnist/csdip/meas100/im4.npy
+Starting DIP estimation at time 162.47
+ Starting restart 1 of 5 at time 162.47
+  Finished restart 1 of 5
+  Best Loss [452.17272949]
+  Time 32.52 seconds
+
+ Starting restart 2 of 5 at time 194.99
+  Finished restart 2 of 5
+  Best Loss [5.03498077]
+  Time 32.37 seconds
+
+ Starting restart 3 of 5 at time 227.36
+  Finished restart 3 of 5
+  Best Loss [169.52505493]
+  Time 31.52 seconds
+
+ Starting restart 4 of 5 at time 258.88
+  Finished restart 4 of 5
+  Best Loss [452.17272949]
+  Time 31.65 seconds
+
+ Starting restart 5 of 5 at time 290.53
+  Finished restart 5 of 5
+  Best Loss [34.50303268]
+  Time 31.5 seconds
+
+Finished DIP in 160 seconds
+/Users/reagankan/Reagan_GT/spring2022/imaging/compsensing_dip/reconstructions/mnist/csdip/meas100/im5.npy
+Starting DIP estimation at time 322.04
+ Starting restart 1 of 5 at time 322.04
+  Finished restart 1 of 5
+  Best Loss [207.41494751]
+  Time 31.6 seconds
+
+ Starting restart 2 of 5 at time 353.64
+  Finished restart 2 of 5
+  Best Loss [13.32043648]
+  Time 31.44 seconds
+
+ Starting restart 3 of 5 at time 385.08
+  Finished restart 3 of 5
+  Best Loss [108.62194061]
+  Time 31.9 seconds
+
+ Starting restart 4 of 5 at time 416.99
+  Finished restart 4 of 5
+  Best Loss [116.43421936]
+  Time 32.04 seconds
+
+ Starting restart 5 of 5 at time 449.02
+  Finished restart 5 of 5
+  Best Loss [118.55646515]
+  Time 31.78 seconds
+
+Finished DIP in 159 seconds
+Reconstructions generated!
