@@ -1,0 +1,18 @@
+pytorch device cpu
+Namespace(DATASET='xray', ALG=['csdip'], NUM_MEASUREMENTS=500, DEMO='True', NUM_ITER=1000, NUM_RESTARTS=1, PRETRAIN=True, IMG_SIZE=256, NUM_CHANNELS=1, Z_DIM=64, LR_FOLDER='./learned_regularization/xray/', VARIANCE_LIST=[0, 10, 100, 1000], configs_fname='configs_15shots.json')
+NUM_MEASUREMENTS 500
+im_path ('data/xray_demo/sub/1.jpg',)
+stdev = 0.0; var = 0.0
+Starting DIP estimation at time 2.21
+ Starting restart 1 of 1 at time 2.24
+  Pretraining
+	Pretraining with 15 shots with L2 loss
+  Iteration 0 of 50000
+    loss: 0.4786376655101776
+    time per 5k iter: 2.05s
+  Iteration 5000 of 50000
+    loss: 0.00018337825895287097
+    time per 5k iter: 8827.08s
+  Iteration 10000 of 50000
+    loss: 8.85372210177593e-05
+    time per 5k iter: 8636.54s

@@ -1,0 +1,205 @@
+pytorch device cpu
+Namespace(DATASET='retino', ALG=['csdip'], NUM_MEASUREMENTS=8000, DEMO='True', NUM_ITER=1000, NUM_RESTARTS=1, PRETRAIN=False, IMG_SIZE=128, NUM_CHANNELS=3, Z_DIM=32, LR_FOLDER='./learned_regularization/retino/', VARIANCE_LIST=[0, 10, 100, 1000], configs_fname='configs.json')
+NUM_MEASUREMENTS 8000
+im_path ('data/retino_demo/sub/1.jpg',)
+stdev = 0.0; var = 0.0
+Starting DIP estimation at time 14.36
+ Starting restart 1 of 1 at time 14.82
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [6.74742794]
+  Time 202.94 seconds
+
+Finished DIP in 203 seconds
+im_path ('data/retino_demo/sub/2.jpg',)
+stdev = 0.0; var = 0.0
+Starting DIP estimation at time 218.08
+ Starting restart 1 of 1 at time 218.41
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [8.56694126]
+  Time 207.19 seconds
+
+Finished DIP in 208 seconds
+im_path ('data/retino_demo/sub/3.jpg',)
+stdev = 0.0; var = 0.0
+Starting DIP estimation at time 425.86
+ Starting restart 1 of 1 at time 426.15
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [8.10365009]
+  Time 209.99 seconds
+
+Finished DIP in 210 seconds
+im_path ('data/retino_demo/sub/4.jpg',)
+stdev = 0.0; var = 0.0
+Starting DIP estimation at time 636.4
+ Starting restart 1 of 1 at time 636.68
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [5.02916622]
+  Time 209.98 seconds
+
+Finished DIP in 210 seconds
+im_path ('data/retino_demo/sub/5.jpg',)
+stdev = 0.0; var = 0.0
+Starting DIP estimation at time 846.92
+ Starting restart 1 of 1 at time 847.2
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [9.37004852]
+  Time 210.68 seconds
+
+Finished DIP in 211 seconds
+im_path ('data/retino_demo/sub/1.jpg',)
+stdev = 3.1622776601683795; var = 10.000000000000002
+Starting DIP estimation at time 1058.15
+ Starting restart 1 of 1 at time 1058.43
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [6.2871151]
+  Time 211.21 seconds
+
+Finished DIP in 211 seconds
+im_path ('data/retino_demo/sub/2.jpg',)
+stdev = 3.1622776601683795; var = 10.000000000000002
+Starting DIP estimation at time 1269.91
+ Starting restart 1 of 1 at time 1270.19
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [5.81478786]
+  Time 210.35 seconds
+
+Finished DIP in 211 seconds
+im_path ('data/retino_demo/sub/3.jpg',)
+stdev = 3.1622776601683795; var = 10.000000000000002
+Starting DIP estimation at time 1480.81
+ Starting restart 1 of 1 at time 1481.09
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [6.80012321]
+  Time 211.41 seconds
+
+Finished DIP in 212 seconds
+im_path ('data/retino_demo/sub/4.jpg',)
+stdev = 3.1622776601683795; var = 10.000000000000002
+Starting DIP estimation at time 1692.79
+ Starting restart 1 of 1 at time 1693.09
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [5.79509783]
+  Time 210.05 seconds
+
+Finished DIP in 210 seconds
+im_path ('data/retino_demo/sub/5.jpg',)
+stdev = 3.1622776601683795; var = 10.000000000000002
+Starting DIP estimation at time 1903.45
+ Starting restart 1 of 1 at time 1903.72
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [6.27291107]
+  Time 209.27 seconds
+
+Finished DIP in 210 seconds
+im_path ('data/retino_demo/sub/1.jpg',)
+stdev = 10.0; var = 100.0
+Starting DIP estimation at time 2113.34
+ Starting restart 1 of 1 at time 2113.62
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [6.41256475]
+  Time 224.41 seconds
+
+Finished DIP in 225 seconds
+im_path ('data/retino_demo/sub/2.jpg',)
+stdev = 10.0; var = 100.0
+Starting DIP estimation at time 2338.37
+ Starting restart 1 of 1 at time 2338.65
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [5.78120613]
+  Time 202.37 seconds
+
+Finished DIP in 203 seconds
+im_path ('data/retino_demo/sub/3.jpg',)
+stdev = 10.0; var = 100.0
+Starting DIP estimation at time 2541.28
+ Starting restart 1 of 1 at time 2541.54
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [10.7213316]
+  Time 200.57 seconds
+
+Finished DIP in 201 seconds
+im_path ('data/retino_demo/sub/4.jpg',)
+stdev = 10.0; var = 100.0
+Starting DIP estimation at time 2742.36
+ Starting restart 1 of 1 at time 2742.61
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [5.00817776]
+  Time 195.58 seconds
+
+Finished DIP in 196 seconds
+im_path ('data/retino_demo/sub/5.jpg',)
+stdev = 10.0; var = 100.0
+Starting DIP estimation at time 2938.43
+ Starting restart 1 of 1 at time 2938.68
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [8.68230438]
+  Time 194.4 seconds
+
+Finished DIP in 195 seconds
+im_path ('data/retino_demo/sub/1.jpg',)
+stdev = 31.622776601683793; var = 1000.0
+Starting DIP estimation at time 3133.34
+ Starting restart 1 of 1 at time 3133.62
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [6.68584585]
+  Time 207.82 seconds
+
+Finished DIP in 208 seconds
+im_path ('data/retino_demo/sub/2.jpg',)
+stdev = 31.622776601683793; var = 1000.0
+Starting DIP estimation at time 3341.7
+ Starting restart 1 of 1 at time 3341.97
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [6.51025581]
+  Time 207.24 seconds
+
+Finished DIP in 208 seconds
+im_path ('data/retino_demo/sub/3.jpg',)
+stdev = 31.622776601683793; var = 1000.0
+Starting DIP estimation at time 3549.56
+ Starting restart 1 of 1 at time 3549.9
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [6.34864521]
+  Time 200.06 seconds
+
+Finished DIP in 200 seconds
+im_path ('data/retino_demo/sub/4.jpg',)
+stdev = 31.622776601683793; var = 1000.0
+Starting DIP estimation at time 3750.63
+ Starting restart 1 of 1 at time 3750.89
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [6.52107143]
+  Time 202.15 seconds
+
+Finished DIP in 202 seconds
+im_path ('data/retino_demo/sub/5.jpg',)
+stdev = 31.622776601683793; var = 1000.0
+Starting DIP estimation at time 3953.32
+ Starting restart 1 of 1 at time 3953.57
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [10.65106869]
+  Time 205.66 seconds
+
+Finished DIP in 206 seconds
+Reconstructions generated!
+Total Time:  4156.93 seconds

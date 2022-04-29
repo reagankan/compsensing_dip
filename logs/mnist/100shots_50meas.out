@@ -1,0 +1,305 @@
+pytorch device cpu
+Namespace(DATASET='mnist', ALG=['csdip'], NUM_MEASUREMENTS=50, DEMO='True', NUM_ITER=10000, NUM_RESTARTS=1, PRETRAIN=True, IMG_SIZE=28, NUM_CHANNELS=1, Z_DIM=128, LR_FOLDER='./learned_regularization/mnist/', VARIANCE_LIST=[0, 10, 100, 1000], configs_fname='configs_100shots.json')
+NUM_MEASUREMENTS 50
+im_path ('data/mnist_demo/sub/1.jpg',)
+stdev = 0.0; var = 0.0
+Starting DIP estimation at time 3.11
+ Starting restart 1 of 1 at time 3.11
+Loaded net and z from pretrained_weights/mnist_demo/shots100/net_L2_50.pth 
+	and pretrained_weights/mnist_demo/shots100/latent_codes_L2_50.pth
+	in 0.04 seconds
+	Initializing Z with 100 shots with MSE loss
+	estimate_initial_latent_codes total time 26.16s
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.02362828]
+  Time 492.67 seconds
+
+Finished DIP in 493 seconds
+im_path ('data/mnist_demo/sub/2.jpg',)
+stdev = 0.0; var = 0.0
+Starting DIP estimation at time 495.8
+ Starting restart 1 of 1 at time 495.8
+Loaded net and z from pretrained_weights/mnist_demo/shots100/net_L2_50.pth 
+	and pretrained_weights/mnist_demo/shots100/latent_codes_L2_50.pth
+	in 0.04 seconds
+	Initializing Z with 100 shots with MSE loss
+	estimate_initial_latent_codes total time 26.88s
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.02823019]
+  Time 523.71 seconds
+
+Finished DIP in 524 seconds
+im_path ('data/mnist_demo/sub/3.jpg',)
+stdev = 0.0; var = 0.0
+Starting DIP estimation at time 1019.52
+ Starting restart 1 of 1 at time 1019.52
+Loaded net and z from pretrained_weights/mnist_demo/shots100/net_L2_50.pth 
+	and pretrained_weights/mnist_demo/shots100/latent_codes_L2_50.pth
+	in 0.03 seconds
+	Initializing Z with 100 shots with MSE loss
+	estimate_initial_latent_codes total time 25.0s
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [166.80311584]
+  Time 558.39 seconds
+
+Finished DIP in 558 seconds
+im_path ('data/mnist_demo/sub/4.jpg',)
+stdev = 0.0; var = 0.0
+Starting DIP estimation at time 1577.93
+ Starting restart 1 of 1 at time 1577.93
+Loaded net and z from pretrained_weights/mnist_demo/shots100/net_L2_50.pth 
+	and pretrained_weights/mnist_demo/shots100/latent_codes_L2_50.pth
+	in 0.03 seconds
+	Initializing Z with 100 shots with MSE loss
+	estimate_initial_latent_codes total time 25.21s
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.01522199]
+  Time 520.46 seconds
+
+Finished DIP in 520 seconds
+im_path ('data/mnist_demo/sub/5.jpg',)
+stdev = 0.0; var = 0.0
+Starting DIP estimation at time 2098.4
+ Starting restart 1 of 1 at time 2098.4
+Loaded net and z from pretrained_weights/mnist_demo/shots100/net_L2_50.pth 
+	and pretrained_weights/mnist_demo/shots100/latent_codes_L2_50.pth
+	in 0.03 seconds
+	Initializing Z with 100 shots with MSE loss
+	estimate_initial_latent_codes total time 23.95s
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.02895527]
+  Time 485.11 seconds
+
+Finished DIP in 485 seconds
+im_path ('data/mnist_demo/sub/1.jpg',)
+stdev = 3.1622776601683795; var = 10.000000000000002
+Starting DIP estimation at time 2583.52
+ Starting restart 1 of 1 at time 2583.52
+Loaded net and z from pretrained_weights/mnist_demo/shots100/net_L2_50.pth 
+	and pretrained_weights/mnist_demo/shots100/latent_codes_L2_50.pth
+	in 0.03 seconds
+	Initializing Z with 100 shots with MSE loss
+	estimate_initial_latent_codes total time 22.87s
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.01674881]
+  Time 522.74 seconds
+
+Finished DIP in 523 seconds
+im_path ('data/mnist_demo/sub/2.jpg',)
+stdev = 3.1622776601683795; var = 10.000000000000002
+Starting DIP estimation at time 3106.28
+ Starting restart 1 of 1 at time 3106.28
+Loaded net and z from pretrained_weights/mnist_demo/shots100/net_L2_50.pth 
+	and pretrained_weights/mnist_demo/shots100/latent_codes_L2_50.pth
+	in 0.03 seconds
+	Initializing Z with 100 shots with MSE loss
+	estimate_initial_latent_codes total time 24.95s
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.0123296]
+  Time 511.43 seconds
+
+Finished DIP in 511 seconds
+im_path ('data/mnist_demo/sub/3.jpg',)
+stdev = 3.1622776601683795; var = 10.000000000000002
+Starting DIP estimation at time 3617.72
+ Starting restart 1 of 1 at time 3617.72
+Loaded net and z from pretrained_weights/mnist_demo/shots100/net_L2_50.pth 
+	and pretrained_weights/mnist_demo/shots100/latent_codes_L2_50.pth
+	in 0.02 seconds
+	Initializing Z with 100 shots with MSE loss
+	estimate_initial_latent_codes total time 16.56s
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [165.88801575]
+  Time 378.39 seconds
+
+Finished DIP in 378 seconds
+im_path ('data/mnist_demo/sub/4.jpg',)
+stdev = 3.1622776601683795; var = 10.000000000000002
+Starting DIP estimation at time 3996.11
+ Starting restart 1 of 1 at time 3996.11
+Loaded net and z from pretrained_weights/mnist_demo/shots100/net_L2_50.pth 
+	and pretrained_weights/mnist_demo/shots100/latent_codes_L2_50.pth
+	in 0.02 seconds
+	Initializing Z with 100 shots with MSE loss
+	estimate_initial_latent_codes total time 16.52s
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.01329828]
+  Time 332.87 seconds
+
+Finished DIP in 333 seconds
+im_path ('data/mnist_demo/sub/5.jpg',)
+stdev = 3.1622776601683795; var = 10.000000000000002
+Starting DIP estimation at time 4328.98
+ Starting restart 1 of 1 at time 4328.98
+Loaded net and z from pretrained_weights/mnist_demo/shots100/net_L2_50.pth 
+	and pretrained_weights/mnist_demo/shots100/latent_codes_L2_50.pth
+	in 0.02 seconds
+	Initializing Z with 100 shots with MSE loss
+	estimate_initial_latent_codes total time 16.5s
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.02056591]
+  Time 331.53 seconds
+
+Finished DIP in 332 seconds
+im_path ('data/mnist_demo/sub/1.jpg',)
+stdev = 10.0; var = 100.0
+Starting DIP estimation at time 4660.52
+ Starting restart 1 of 1 at time 4660.52
+Loaded net and z from pretrained_weights/mnist_demo/shots100/net_L2_50.pth 
+	and pretrained_weights/mnist_demo/shots100/latent_codes_L2_50.pth
+	in 0.02 seconds
+	Initializing Z with 100 shots with MSE loss
+	estimate_initial_latent_codes total time 16.5s
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.00783643]
+  Time 356.4 seconds
+
+Finished DIP in 356 seconds
+im_path ('data/mnist_demo/sub/2.jpg',)
+stdev = 10.0; var = 100.0
+Starting DIP estimation at time 5016.93
+ Starting restart 1 of 1 at time 5016.93
+Loaded net and z from pretrained_weights/mnist_demo/shots100/net_L2_50.pth 
+	and pretrained_weights/mnist_demo/shots100/latent_codes_L2_50.pth
+	in 0.02 seconds
+	Initializing Z with 100 shots with MSE loss
+	estimate_initial_latent_codes total time 17.65s
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.00779739]
+  Time 350.89 seconds
+
+Finished DIP in 351 seconds
+im_path ('data/mnist_demo/sub/3.jpg',)
+stdev = 10.0; var = 100.0
+Starting DIP estimation at time 5367.83
+ Starting restart 1 of 1 at time 5367.83
+Loaded net and z from pretrained_weights/mnist_demo/shots100/net_L2_50.pth 
+	and pretrained_weights/mnist_demo/shots100/latent_codes_L2_50.pth
+	in 0.02 seconds
+	Initializing Z with 100 shots with MSE loss
+	estimate_initial_latent_codes total time 17.15s
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.00728694]
+  Time 345.05 seconds
+
+Finished DIP in 345 seconds
+im_path ('data/mnist_demo/sub/4.jpg',)
+stdev = 10.0; var = 100.0
+Starting DIP estimation at time 5712.88
+ Starting restart 1 of 1 at time 5712.89
+Loaded net and z from pretrained_weights/mnist_demo/shots100/net_L2_50.pth 
+	and pretrained_weights/mnist_demo/shots100/latent_codes_L2_50.pth
+	in 0.02 seconds
+	Initializing Z with 100 shots with MSE loss
+	estimate_initial_latent_codes total time 17.47s
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.0148316]
+  Time 346.41 seconds
+
+Finished DIP in 346 seconds
+im_path ('data/mnist_demo/sub/5.jpg',)
+stdev = 10.0; var = 100.0
+Starting DIP estimation at time 6059.3
+ Starting restart 1 of 1 at time 6059.3
+Loaded net and z from pretrained_weights/mnist_demo/shots100/net_L2_50.pth 
+	and pretrained_weights/mnist_demo/shots100/latent_codes_L2_50.pth
+	in 0.02 seconds
+	Initializing Z with 100 shots with MSE loss
+	estimate_initial_latent_codes total time 17.63s
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.01117845]
+  Time 347.74 seconds
+
+Finished DIP in 348 seconds
+im_path ('data/mnist_demo/sub/1.jpg',)
+stdev = 31.622776601683793; var = 1000.0
+Starting DIP estimation at time 6407.05
+ Starting restart 1 of 1 at time 6407.05
+Loaded net and z from pretrained_weights/mnist_demo/shots100/net_L2_50.pth 
+	and pretrained_weights/mnist_demo/shots100/latent_codes_L2_50.pth
+	in 0.02 seconds
+	Initializing Z with 100 shots with MSE loss
+	estimate_initial_latent_codes total time 16.28s
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.06453443]
+  Time 347.62 seconds
+
+Finished DIP in 348 seconds
+im_path ('data/mnist_demo/sub/2.jpg',)
+stdev = 31.622776601683793; var = 1000.0
+Starting DIP estimation at time 6754.67
+ Starting restart 1 of 1 at time 6754.67
+Loaded net and z from pretrained_weights/mnist_demo/shots100/net_L2_50.pth 
+	and pretrained_weights/mnist_demo/shots100/latent_codes_L2_50.pth
+	in 0.02 seconds
+	Initializing Z with 100 shots with MSE loss
+	estimate_initial_latent_codes total time 16.91s
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.01150527]
+  Time 344.61 seconds
+
+Finished DIP in 345 seconds
+im_path ('data/mnist_demo/sub/3.jpg',)
+stdev = 31.622776601683793; var = 1000.0
+Starting DIP estimation at time 7099.29
+ Starting restart 1 of 1 at time 7099.29
+Loaded net and z from pretrained_weights/mnist_demo/shots100/net_L2_50.pth 
+	and pretrained_weights/mnist_demo/shots100/latent_codes_L2_50.pth
+	in 0.03 seconds
+	Initializing Z with 100 shots with MSE loss
+	estimate_initial_latent_codes total time 18.13s
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.0593525]
+  Time 344.19 seconds
+
+Finished DIP in 344 seconds
+im_path ('data/mnist_demo/sub/4.jpg',)
+stdev = 31.622776601683793; var = 1000.0
+Starting DIP estimation at time 7443.49
+ Starting restart 1 of 1 at time 7443.49
+Loaded net and z from pretrained_weights/mnist_demo/shots100/net_L2_50.pth 
+	and pretrained_weights/mnist_demo/shots100/latent_codes_L2_50.pth
+	in 0.02 seconds
+	Initializing Z with 100 shots with MSE loss
+	estimate_initial_latent_codes total time 16.46s
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.01192278]
+  Time 342.38 seconds
+
+Finished DIP in 342 seconds
+im_path ('data/mnist_demo/sub/5.jpg',)
+stdev = 31.622776601683793; var = 1000.0
+Starting DIP estimation at time 7785.88
+ Starting restart 1 of 1 at time 7785.88
+Loaded net and z from pretrained_weights/mnist_demo/shots100/net_L2_50.pth 
+	and pretrained_weights/mnist_demo/shots100/latent_codes_L2_50.pth
+	in 0.02 seconds
+	Initializing Z with 100 shots with MSE loss
+	estimate_initial_latent_codes total time 16.67s
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.04133499]
+  Time 336.89 seconds
+
+Finished DIP in 337 seconds
+Reconstructions generated!
+Total Time:  8119.69 seconds

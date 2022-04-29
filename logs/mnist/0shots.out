@@ -1,0 +1,607 @@
+pytorch device cpu
+Namespace(DATASET='mnist', ALG=['csdip'], NUM_MEASUREMENTS=[50, 100, 200], DEMO='True', NUM_ITER=10000, NUM_RESTARTS=1, PRETRAIN=False, IMG_SIZE=28, NUM_CHANNELS=1, Z_DIM=128, LR_FOLDER='./learned_regularization/mnist/', VARIANCE_LIST=[0, 10, 100, 1000], configs_fname='configs.json')
+NUM_MEASUREMENTS 50
+im_path ('data/mnist_demo/sub/1.jpg',)
+stdev = 0.0; var = 0.0
+Starting DIP estimation at time 2.74
+ Starting restart 1 of 1 at time 2.74
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.07039834]
+  Time 434.76 seconds
+
+Finished DIP in 435 seconds
+im_path ('data/mnist_demo/sub/2.jpg',)
+stdev = 0.0; var = 0.0
+Starting DIP estimation at time 437.51
+ Starting restart 1 of 1 at time 437.51
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.00776565]
+  Time 426.29 seconds
+
+Finished DIP in 426 seconds
+im_path ('data/mnist_demo/sub/3.jpg',)
+stdev = 0.0; var = 0.0
+Starting DIP estimation at time 863.82
+ Starting restart 1 of 1 at time 863.82
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.00571976]
+  Time 421.02 seconds
+
+Finished DIP in 421 seconds
+im_path ('data/mnist_demo/sub/4.jpg',)
+stdev = 0.0; var = 0.0
+Starting DIP estimation at time 1284.84
+ Starting restart 1 of 1 at time 1284.84
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [305.72406006]
+  Time 463.93 seconds
+
+Finished DIP in 464 seconds
+im_path ('data/mnist_demo/sub/5.jpg',)
+stdev = 0.0; var = 0.0
+Starting DIP estimation at time 1748.78
+ Starting restart 1 of 1 at time 1748.78
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.01227596]
+  Time 420.53 seconds
+
+Finished DIP in 421 seconds
+im_path ('data/mnist_demo/sub/1.jpg',)
+stdev = 3.1622776601683795; var = 10.000000000000002
+Starting DIP estimation at time 2169.32
+ Starting restart 1 of 1 at time 2169.32
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.0180922]
+  Time 421.31 seconds
+
+Finished DIP in 421 seconds
+im_path ('data/mnist_demo/sub/2.jpg',)
+stdev = 3.1622776601683795; var = 10.000000000000002
+Starting DIP estimation at time 2590.65
+ Starting restart 1 of 1 at time 2590.65
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.00932658]
+  Time 419.28 seconds
+
+Finished DIP in 419 seconds
+im_path ('data/mnist_demo/sub/3.jpg',)
+stdev = 3.1622776601683795; var = 10.000000000000002
+Starting DIP estimation at time 3009.94
+ Starting restart 1 of 1 at time 3009.94
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [165.88801575]
+  Time 462.14 seconds
+
+Finished DIP in 462 seconds
+im_path ('data/mnist_demo/sub/4.jpg',)
+stdev = 3.1622776601683795; var = 10.000000000000002
+Starting DIP estimation at time 3472.08
+ Starting restart 1 of 1 at time 3472.08
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [304.90814209]
+  Time 464.33 seconds
+
+Finished DIP in 464 seconds
+im_path ('data/mnist_demo/sub/5.jpg',)
+stdev = 3.1622776601683795; var = 10.000000000000002
+Starting DIP estimation at time 3936.42
+ Starting restart 1 of 1 at time 3936.42
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.00991513]
+  Time 420.99 seconds
+
+Finished DIP in 421 seconds
+im_path ('data/mnist_demo/sub/1.jpg',)
+stdev = 10.0; var = 100.0
+Starting DIP estimation at time 4357.43
+ Starting restart 1 of 1 at time 4357.43
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.01399823]
+  Time 426.98 seconds
+
+Finished DIP in 427 seconds
+im_path ('data/mnist_demo/sub/2.jpg',)
+stdev = 10.0; var = 100.0
+Starting DIP estimation at time 4784.41
+ Starting restart 1 of 1 at time 4784.41
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.03020315]
+  Time 422.78 seconds
+
+Finished DIP in 423 seconds
+im_path ('data/mnist_demo/sub/3.jpg',)
+stdev = 10.0; var = 100.0
+Starting DIP estimation at time 5207.2
+ Starting restart 1 of 1 at time 5207.2
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [165.66868591]
+  Time 462.48 seconds
+
+Finished DIP in 462 seconds
+im_path ('data/mnist_demo/sub/4.jpg',)
+stdev = 10.0; var = 100.0
+Starting DIP estimation at time 5669.68
+ Starting restart 1 of 1 at time 5669.68
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.01923911]
+  Time 423.04 seconds
+
+Finished DIP in 423 seconds
+im_path ('data/mnist_demo/sub/5.jpg',)
+stdev = 10.0; var = 100.0
+Starting DIP estimation at time 6092.73
+ Starting restart 1 of 1 at time 6092.74
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.01369926]
+  Time 421.43 seconds
+
+Finished DIP in 421 seconds
+im_path ('data/mnist_demo/sub/1.jpg',)
+stdev = 31.622776601683793; var = 1000.0
+Starting DIP estimation at time 6514.17
+ Starting restart 1 of 1 at time 6514.17
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.01106333]
+  Time 420.72 seconds
+
+Finished DIP in 421 seconds
+im_path ('data/mnist_demo/sub/2.jpg',)
+stdev = 31.622776601683793; var = 1000.0
+Starting DIP estimation at time 6934.9
+ Starting restart 1 of 1 at time 6934.9
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.02795939]
+  Time 417.98 seconds
+
+Finished DIP in 418 seconds
+im_path ('data/mnist_demo/sub/3.jpg',)
+stdev = 31.622776601683793; var = 1000.0
+Starting DIP estimation at time 7352.89
+ Starting restart 1 of 1 at time 7352.9
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.01278635]
+  Time 419.59 seconds
+
+Finished DIP in 420 seconds
+im_path ('data/mnist_demo/sub/4.jpg',)
+stdev = 31.622776601683793; var = 1000.0
+Starting DIP estimation at time 7772.5
+ Starting restart 1 of 1 at time 7772.51
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.06100924]
+  Time 427.7 seconds
+
+Finished DIP in 428 seconds
+im_path ('data/mnist_demo/sub/5.jpg',)
+stdev = 31.622776601683793; var = 1000.0
+Starting DIP estimation at time 8200.22
+ Starting restart 1 of 1 at time 8200.22
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.07042481]
+  Time 423.35 seconds
+
+Finished DIP in 423 seconds
+NUM_MEASUREMENTS 100
+im_path ('data/mnist_demo/sub/1.jpg',)
+stdev = 0.0; var = 0.0
+Starting DIP estimation at time 8623.57
+ Starting restart 1 of 1 at time 8623.58
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.01688648]
+  Time 424.71 seconds
+
+Finished DIP in 425 seconds
+im_path ('data/mnist_demo/sub/2.jpg',)
+stdev = 0.0; var = 0.0
+Starting DIP estimation at time 9048.29
+ Starting restart 1 of 1 at time 9048.3
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.02540265]
+  Time 425.85 seconds
+
+Finished DIP in 426 seconds
+im_path ('data/mnist_demo/sub/3.jpg',)
+stdev = 0.0; var = 0.0
+Starting DIP estimation at time 9474.15
+ Starting restart 1 of 1 at time 9474.15
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [164.59376526]
+  Time 466.01 seconds
+
+Finished DIP in 466 seconds
+im_path ('data/mnist_demo/sub/4.jpg',)
+stdev = 0.0; var = 0.0
+Starting DIP estimation at time 9940.17
+ Starting restart 1 of 1 at time 9940.17
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [348.97128296]
+  Time 482.14 seconds
+
+Finished DIP in 482 seconds
+im_path ('data/mnist_demo/sub/5.jpg',)
+stdev = 0.0; var = 0.0
+Starting DIP estimation at time 10422.32
+ Starting restart 1 of 1 at time 10422.32
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.025002]
+  Time 482.9 seconds
+
+Finished DIP in 483 seconds
+im_path ('data/mnist_demo/sub/1.jpg',)
+stdev = 3.1622776601683795; var = 10.000000000000002
+Starting DIP estimation at time 10905.24
+ Starting restart 1 of 1 at time 10905.24
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.06011426]
+  Time 463.67 seconds
+
+Finished DIP in 464 seconds
+im_path ('data/mnist_demo/sub/2.jpg',)
+stdev = 3.1622776601683795; var = 10.000000000000002
+Starting DIP estimation at time 11368.93
+ Starting restart 1 of 1 at time 11368.93
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.01220092]
+  Time 453.4 seconds
+
+Finished DIP in 453 seconds
+im_path ('data/mnist_demo/sub/3.jpg',)
+stdev = 3.1622776601683795; var = 10.000000000000002
+Starting DIP estimation at time 11822.34
+ Starting restart 1 of 1 at time 11822.34
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [163.55760193]
+  Time 490.88 seconds
+
+Finished DIP in 491 seconds
+im_path ('data/mnist_demo/sub/4.jpg',)
+stdev = 3.1622776601683795; var = 10.000000000000002
+Starting DIP estimation at time 12313.23
+ Starting restart 1 of 1 at time 12313.23
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.03921992]
+  Time 444.61 seconds
+
+Finished DIP in 445 seconds
+im_path ('data/mnist_demo/sub/5.jpg',)
+stdev = 3.1622776601683795; var = 10.000000000000002
+Starting DIP estimation at time 12757.85
+ Starting restart 1 of 1 at time 12757.86
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.01433878]
+  Time 526.06 seconds
+
+Finished DIP in 526 seconds
+im_path ('data/mnist_demo/sub/1.jpg',)
+stdev = 10.0; var = 100.0
+Starting DIP estimation at time 13283.94
+ Starting restart 1 of 1 at time 13283.94
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.02474339]
+  Time 488.54 seconds
+
+Finished DIP in 489 seconds
+im_path ('data/mnist_demo/sub/2.jpg',)
+stdev = 10.0; var = 100.0
+Starting DIP estimation at time 13772.5
+ Starting restart 1 of 1 at time 13772.5
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.01661371]
+  Time 478.17 seconds
+
+Finished DIP in 478 seconds
+im_path ('data/mnist_demo/sub/3.jpg',)
+stdev = 10.0; var = 100.0
+Starting DIP estimation at time 14250.68
+ Starting restart 1 of 1 at time 14250.68
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.04287366]
+  Time 479.69 seconds
+
+Finished DIP in 480 seconds
+im_path ('data/mnist_demo/sub/4.jpg',)
+stdev = 10.0; var = 100.0
+Starting DIP estimation at time 14730.37
+ Starting restart 1 of 1 at time 14730.38
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.01704264]
+  Time 437.35 seconds
+
+Finished DIP in 437 seconds
+im_path ('data/mnist_demo/sub/5.jpg',)
+stdev = 10.0; var = 100.0
+Starting DIP estimation at time 15167.74
+ Starting restart 1 of 1 at time 15167.74
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.0157901]
+  Time 418.48 seconds
+
+Finished DIP in 418 seconds
+im_path ('data/mnist_demo/sub/1.jpg',)
+stdev = 31.622776601683793; var = 1000.0
+Starting DIP estimation at time 15586.23
+ Starting restart 1 of 1 at time 15586.23
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.01653114]
+  Time 416.49 seconds
+
+Finished DIP in 416 seconds
+im_path ('data/mnist_demo/sub/2.jpg',)
+stdev = 31.622776601683793; var = 1000.0
+Starting DIP estimation at time 16002.73
+ Starting restart 1 of 1 at time 16002.73
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.00972288]
+  Time 422.18 seconds
+
+Finished DIP in 422 seconds
+im_path ('data/mnist_demo/sub/3.jpg',)
+stdev = 31.622776601683793; var = 1000.0
+Starting DIP estimation at time 16424.92
+ Starting restart 1 of 1 at time 16424.92
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.01637388]
+  Time 421.48 seconds
+
+Finished DIP in 421 seconds
+im_path ('data/mnist_demo/sub/4.jpg',)
+stdev = 31.622776601683793; var = 1000.0
+Starting DIP estimation at time 16846.41
+ Starting restart 1 of 1 at time 16846.41
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.01272488]
+  Time 418.79 seconds
+
+Finished DIP in 419 seconds
+im_path ('data/mnist_demo/sub/5.jpg',)
+stdev = 31.622776601683793; var = 1000.0
+Starting DIP estimation at time 17265.2
+ Starting restart 1 of 1 at time 17265.2
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.02124655]
+  Time 416.2 seconds
+
+Finished DIP in 416 seconds
+NUM_MEASUREMENTS 200
+im_path ('data/mnist_demo/sub/1.jpg',)
+stdev = 0.0; var = 0.0
+Starting DIP estimation at time 17681.41
+ Starting restart 1 of 1 at time 17681.42
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.03189037]
+  Time 421.0 seconds
+
+Finished DIP in 421 seconds
+im_path ('data/mnist_demo/sub/2.jpg',)
+stdev = 0.0; var = 0.0
+Starting DIP estimation at time 18102.43
+ Starting restart 1 of 1 at time 18102.43
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [488.44067383]
+  Time 462.66 seconds
+
+Finished DIP in 463 seconds
+im_path ('data/mnist_demo/sub/3.jpg',)
+stdev = 0.0; var = 0.0
+Starting DIP estimation at time 18565.1
+ Starting restart 1 of 1 at time 18565.1
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [163.74617004]
+  Time 400.76 seconds
+
+Finished DIP in 401 seconds
+im_path ('data/mnist_demo/sub/4.jpg',)
+stdev = 0.0; var = 0.0
+Starting DIP estimation at time 18965.86
+ Starting restart 1 of 1 at time 18965.87
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [369.55654907]
+  Time 343.16 seconds
+
+Finished DIP in 343 seconds
+im_path ('data/mnist_demo/sub/5.jpg',)
+stdev = 0.0; var = 0.0
+Starting DIP estimation at time 19309.03
+ Starting restart 1 of 1 at time 19309.03
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.03860806]
+  Time 309.3 seconds
+
+Finished DIP in 309 seconds
+im_path ('data/mnist_demo/sub/1.jpg',)
+stdev = 3.1622776601683795; var = 10.000000000000002
+Starting DIP estimation at time 19618.34
+ Starting restart 1 of 1 at time 19618.34
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.02909347]
+  Time 310.52 seconds
+
+Finished DIP in 311 seconds
+im_path ('data/mnist_demo/sub/2.jpg',)
+stdev = 3.1622776601683795; var = 10.000000000000002
+Starting DIP estimation at time 19928.87
+ Starting restart 1 of 1 at time 19928.87
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.0557339]
+  Time 311.85 seconds
+
+Finished DIP in 312 seconds
+im_path ('data/mnist_demo/sub/3.jpg',)
+stdev = 3.1622776601683795; var = 10.000000000000002
+Starting DIP estimation at time 20240.73
+ Starting restart 1 of 1 at time 20240.73
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.30118597]
+  Time 311.03 seconds
+
+Finished DIP in 311 seconds
+im_path ('data/mnist_demo/sub/4.jpg',)
+stdev = 3.1622776601683795; var = 10.000000000000002
+Starting DIP estimation at time 20551.76
+ Starting restart 1 of 1 at time 20551.76
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.06481607]
+  Time 311.04 seconds
+
+Finished DIP in 311 seconds
+im_path ('data/mnist_demo/sub/5.jpg',)
+stdev = 3.1622776601683795; var = 10.000000000000002
+Starting DIP estimation at time 20862.81
+ Starting restart 1 of 1 at time 20862.81
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.03655666]
+  Time 322.68 seconds
+
+Finished DIP in 323 seconds
+im_path ('data/mnist_demo/sub/1.jpg',)
+stdev = 10.0; var = 100.0
+Starting DIP estimation at time 21185.5
+ Starting restart 1 of 1 at time 21185.5
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.03314122]
+  Time 319.68 seconds
+
+Finished DIP in 320 seconds
+im_path ('data/mnist_demo/sub/2.jpg',)
+stdev = 10.0; var = 100.0
+Starting DIP estimation at time 21505.19
+ Starting restart 1 of 1 at time 21505.19
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.02749767]
+  Time 329.61 seconds
+
+Finished DIP in 330 seconds
+im_path ('data/mnist_demo/sub/3.jpg',)
+stdev = 10.0; var = 100.0
+Starting DIP estimation at time 21834.8
+ Starting restart 1 of 1 at time 21834.81
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.44125184]
+  Time 424.24 seconds
+
+Finished DIP in 424 seconds
+im_path ('data/mnist_demo/sub/4.jpg',)
+stdev = 10.0; var = 100.0
+Starting DIP estimation at time 22259.06
+ Starting restart 1 of 1 at time 22259.06
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.04362014]
+  Time 445.51 seconds
+
+Finished DIP in 446 seconds
+im_path ('data/mnist_demo/sub/5.jpg',)
+stdev = 10.0; var = 100.0
+Starting DIP estimation at time 22704.58
+ Starting restart 1 of 1 at time 22704.58
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.04198715]
+  Time 424.7 seconds
+
+Finished DIP in 425 seconds
+im_path ('data/mnist_demo/sub/1.jpg',)
+stdev = 31.622776601683793; var = 1000.0
+Starting DIP estimation at time 23129.29
+ Starting restart 1 of 1 at time 23129.29
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.03091748]
+  Time 414.65 seconds
+
+Finished DIP in 415 seconds
+im_path ('data/mnist_demo/sub/2.jpg',)
+stdev = 31.622776601683793; var = 1000.0
+Starting DIP estimation at time 23543.95
+ Starting restart 1 of 1 at time 23543.96
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.03113114]
+  Time 440.23 seconds
+
+Finished DIP in 440 seconds
+im_path ('data/mnist_demo/sub/3.jpg',)
+stdev = 31.622776601683793; var = 1000.0
+Starting DIP estimation at time 23984.2
+ Starting restart 1 of 1 at time 23984.2
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [172.51515198]
+  Time 485.53 seconds
+
+Finished DIP in 486 seconds
+im_path ('data/mnist_demo/sub/4.jpg',)
+stdev = 31.622776601683793; var = 1000.0
+Starting DIP estimation at time 24469.74
+ Starting restart 1 of 1 at time 24469.74
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.03608741]
+  Time 461.8 seconds
+
+Finished DIP in 462 seconds
+im_path ('data/mnist_demo/sub/5.jpg',)
+stdev = 31.622776601683793; var = 1000.0
+Starting DIP estimation at time 24931.55
+ Starting restart 1 of 1 at time 24931.56
+Reconstructing with 10000 iters
+  Finished restart 1 of 1
+  Best Loss [0.03724271]
+  Time 455.37 seconds
+
+Finished DIP in 455 seconds
+Reconstructions generated!
+Total Time:  25384.21 seconds

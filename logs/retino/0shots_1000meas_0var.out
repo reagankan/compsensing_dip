@@ -1,0 +1,55 @@
+pytorch device cpu
+Namespace(DATASET='retino', ALG=['csdip'], NUM_MEASUREMENTS=1000, DEMO='True', NUM_ITER=1000, NUM_RESTARTS=1, PRETRAIN=False, IMG_SIZE=128, NUM_CHANNELS=3, Z_DIM=32, LR_FOLDER='./learned_regularization/retino/', VARIANCE_LIST=0, configs_fname='configs.json')
+NUM_MEASUREMENTS 1000
+im_path ('data/retino_demo/sub/1.jpg',)
+stdev = 0.0; var = 0.0
+Starting DIP estimation at time 3.49
+ Starting restart 1 of 1 at time 3.59
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [0.95597547]
+  Time 77.91 seconds
+
+Finished DIP in 78 seconds
+im_path ('data/retino_demo/sub/2.jpg',)
+stdev = 0.0; var = 0.0
+Starting DIP estimation at time 81.57
+ Starting restart 1 of 1 at time 81.62
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [1.95417678]
+  Time 84.6 seconds
+
+Finished DIP in 85 seconds
+im_path ('data/retino_demo/sub/3.jpg',)
+stdev = 0.0; var = 0.0
+Starting DIP estimation at time 166.28
+ Starting restart 1 of 1 at time 166.33
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [3.05371547]
+  Time 82.07 seconds
+
+Finished DIP in 82 seconds
+im_path ('data/retino_demo/sub/4.jpg',)
+stdev = 0.0; var = 0.0
+Starting DIP estimation at time 248.57
+ Starting restart 1 of 1 at time 248.64
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [2.23929834]
+  Time 91.96 seconds
+
+Finished DIP in 92 seconds
+im_path ('data/retino_demo/sub/5.jpg',)
+stdev = 0.0; var = 0.0
+Starting DIP estimation at time 340.65
+ Starting restart 1 of 1 at time 340.7
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [0.7837736]
+  Time 77.89 seconds
+
+Finished DIP in 78 seconds
+Reconstructions generated!
+Total Time:  416.77 seconds

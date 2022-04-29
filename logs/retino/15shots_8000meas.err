@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/Users/reagankan/Reagan_GT/spring2022/imaging/compsensing_dip/comp_sensing.py", line 91, in <module>
+    main()
+  File "/Users/reagankan/Reagan_GT/spring2022/imaging/compsensing_dip/comp_sensing.py", line 79, in main
+    x_hat = estimator(A, y, args)
+  File "/Users/reagankan/Reagan_GT/spring2022/imaging/compsensing_dip/cs_dip.py", line 46, in estimator
+    net, zs = pretrain(net, A_val, y_batch_val, args)
+  File "/Users/reagankan/Reagan_GT/spring2022/imaging/compsensing_dip/pretrain.py", line 39, in pretrain
+    net, z_stats = _pretrain(net, A_val, y_batch_val, args)
+  File "/Users/reagankan/Reagan_GT/spring2022/imaging/compsensing_dip/pretrain.py", line 199, in _pretrain
+    data = get_data(args, num_shots=pretrain_args["num_shots"])
+  File "/Users/reagankan/Reagan_GT/spring2022/imaging/compsensing_dip/pretrain.py", line 110, in get_data
+    dataset = utils.ImageFolderWithPaths(image_direc, transform = compose)
+  File "/Users/reagankan/miniconda3/envs/imaging/lib/python3.9/site-packages/torchvision/datasets/folder.py", line 310, in __init__
+    super().__init__(
+  File "/Users/reagankan/miniconda3/envs/imaging/lib/python3.9/site-packages/torchvision/datasets/folder.py", line 145, in __init__
+    classes, class_to_idx = self.find_classes(self.root)
+  File "/Users/reagankan/miniconda3/envs/imaging/lib/python3.9/site-packages/torchvision/datasets/folder.py", line 219, in find_classes
+    return find_classes(directory)
+  File "/Users/reagankan/miniconda3/envs/imaging/lib/python3.9/site-packages/torchvision/datasets/folder.py", line 41, in find_classes
+    classes = sorted(entry.name for entry in os.scandir(directory) if entry.is_dir())
+FileNotFoundError: [Errno 2] No such file or directory: 'pretrain_data/retino_demo/shots0/'
