@@ -5,11 +5,7 @@ import copy
 import numpy as np
 import time
 import sys
-
-default_print = print
-def print(*args):
-    default_print(*args)
-    sys.stdout.flush()
+from utils import print
 
 LMBD = 1e-5
 
@@ -100,4 +96,5 @@ def lasso_wavelet_estimator(args):  #pylint: disable = W0613
     return estimator
 
 def get_A(dimension,num_measurements):
+    np.random.seed(0)
     return np.sqrt(1.0/num_measurements)*np.random.randn(dimension,num_measurements)

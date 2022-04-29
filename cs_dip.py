@@ -7,13 +7,12 @@ import baselines
 import utils
 import time
 import sys
+from utils import print
+from pretrain import pretrain, estimate_initial_latent_codes
 
-default_print = print
-def print(*args):
-    default_print(*args)
-    sys.stdout.flush()
-
-args = parser.parse_args('configs.json') 
+# args = parser.parse_args('configs.json') 
+# args = parser.parse_args('configs_test.json') 
+args = parser.parse_args('configs_15shots.json')
 
 CUDA = torch.cuda.is_available()
 dtype = utils.set_dtype(CUDA)
@@ -35,15 +34,22 @@ def dip_estimator(args):
         mu, sig_inv, tvc, lrc = utils.get_constants(args, dtype)
 
         for j in range(args.NUM_RESTARTS):
-            # rkan3 TODO: load in pretrained weights
-            
+
             t0 = time.perf_counter()
             print(f" Starting restart {j+1} of {args.NUM_RESTARTS} at time {round(t0, 2)}")
 
             net = utils.init_dcgan(args)
 
-            z = torch.zeros(BATCH_SIZE*args.Z_DIM).type(dtype).view(BATCH_SIZE,args.Z_DIM,1,1)
-            z.data.normal_().type(dtype) #init random input seed
+            # rkan3 TODO: load pretrain weights
+            # o.w. pretrain and save weights
+            if args.PRETRAIN:
+                net, zs = pretrain(net, A_val, y_batch_val, args)
+                net, z = estimate_initial_latent_codes(net, zs, A_val, y_batch_val, args)
+
+            else:
+                z = torch.zeros(BATCH_SIZE*args.Z_DIM).type(dtype).view(BATCH_SIZE,args.Z_DIM,1,1)
+                z.data.normal_().type(dtype) #init random input seed
+                
             if CUDA:
                 net.cuda() # cast network to GPU if available
             
@@ -53,6 +59,7 @@ def dip_estimator(args):
             loss_iter = []
             recons_iter = [] 
 
+            print(f"Reconstructing with {args.NUM_ITER} iters")
             for i in range(args.NUM_ITER):
 
                 optim.zero_grad()

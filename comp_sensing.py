@@ -12,55 +12,80 @@ import cs_dip
 import baselines as baselines 
 import time
 
-NEW_RECONS = False
+def main():
 
-args = parser.parse_args('configs.json')
-print(args)
+    t0_full = time.perf_counter()
 
-NUM_MEASUREMENTS_LIST, ALG_LIST = utils.convert_to_list(args)
+    NEW_RECONS = False
 
-dataloader = utils.get_data(args) # get dataset of images
+    # args = parser.parse_args('configs_test.json')
+    args = parser.parse_args('configs_15shots.json')
+    # args = parser.parse_args('configs_50shots.json')
+    # args = parser.parse_args('configs_10shots.json')
+    # args = parser.parse_args('configs.json')
+    # args = parser.parse_args('configs_100shots.json')
+    print(args)
 
-for num_meas in NUM_MEASUREMENTS_LIST:
-    args.NUM_MEASUREMENTS = num_meas 
-    
-    # init measurement matrix
-    A = baselines.get_A(args.IMG_SIZE*args.IMG_SIZE*args.NUM_CHANNELS, args.NUM_MEASUREMENTS)
-    
-    for _, (batch, _, im_path) in enumerate(dataloader):
+    NUM_MEASUREMENTS_LIST, ALG_LIST, VARIANCE_LIST = utils.convert_to_list(args)
 
+    dataloader = utils.get_data(args) # get dataset of images
+
+    for num_meas in NUM_MEASUREMENTS_LIST:
+        args.NUM_MEASUREMENTS = num_meas 
+        print("NUM_MEASUREMENTS", args.NUM_MEASUREMENTS)
         
-        eta_sig = 0 # set value to induce noise 
-        eta = np.random.normal(0, eta_sig * (1.0 / args.NUM_MEASUREMENTS) ,args.NUM_MEASUREMENTS)
-        
-
-        x = batch.view(1,-1).cpu().numpy() # define image
-        y = np.dot(x,A) + eta
+        # init measurement matrix
+        A = baselines.get_A(args.IMG_SIZE*args.IMG_SIZE*args.NUM_CHANNELS, args.NUM_MEASUREMENTS)
+        args.A = A
 
         for alg in ALG_LIST:
             args.ALG = alg
+            if args.ALG == "csdip" and args.PRETRAIN:
+                pretrain_args, _ = utils.parse_pretrain_args(args.configs_fname)
+                args.ALG += "+" + str(pretrain_args["num_shots"])
+        
+            for var in VARIANCE_LIST:
 
-            if utils.recons_exists(args, im_path): # to avoid redundant reconstructions
-                continue
-            NEW_RECONS = True
+                for _, (batch, _, im_path) in enumerate(dataloader):
 
-            if alg == 'csdip':
-                estimator = cs_dip.dip_estimator(args)
-            elif alg == 'dct':
-                estimator = baselines.lasso_dct_estimator(args)
-            elif alg == 'wavelet':
-                estimator = baselines.lasso_wavelet_estimator(args)
-            elif alg == 'bm3d' or alg == 'tval3':
-                raise NotImplementedError('BM3D-AMP and TVAL3 are implemented in Matlab. \
-                                            Please see GitHub repository for details.')
-            else:
-                raise NotImplementedError
+                    print("im_path", im_path)
 
-            x_hat = estimator(A, y, args)
+                    # eta_sig = 0 # set value to induce noise 
+                    eta_sig = np.sqrt(var)
+                    args.STDEV = eta_sig
+                    args.VARIANCE = var
+                    eta = utils.get_noise(eta_sig, args)
+                    print(f"stdev = {eta_sig}; var = {eta_sig**2}")
 
-            utils.save_reconstruction(x_hat, args, im_path)
+                    x = batch.view(1,-1).cpu().numpy() # define image
+                    y = np.dot(x,A) + eta
 
-if NEW_RECONS == False:
-    print('Duplicate experiment configurations. No new data generated.')
-else:
-    print('Reconstructions generated!')
+                    if utils.recons_exists(args, im_path): # to avoid redundant reconstructions
+                        continue
+                    NEW_RECONS = True
+
+                    if alg == 'csdip':
+                        estimator = cs_dip.dip_estimator(args)
+                    elif alg == 'dct':
+                        estimator = baselines.lasso_dct_estimator(args)
+                    elif alg == 'wavelet':
+                        estimator = baselines.lasso_wavelet_estimator(args)
+                    elif alg == 'bm3d' or alg == 'tval3':
+                        raise NotImplementedError('BM3D-AMP and TVAL3 are implemented in Matlab. \
+                                                    Please see GitHub repository for details.')
+                    else:
+                        raise NotImplementedError
+
+                    x_hat = estimator(A, y, args)
+
+                    utils.save_reconstruction(x_hat, args, im_path)
+
+    if NEW_RECONS == False:
+        print('Duplicate experiment configurations. No new data generated.')
+    else:
+        print('Reconstructions generated!')
+
+    print("Total Time: ", round(time.perf_counter() - t0_full, 2), "seconds")
+
+if __name__ == "__main__":
+    main()

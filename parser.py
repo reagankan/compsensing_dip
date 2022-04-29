@@ -27,7 +27,9 @@ def parse_args(config_file='configs.json'):
     parser.add_argument('--NUM_ITER', type=int, default=NUM_ITER,\
     		help='number of iterative weight updates, DEFAULT=' + str(NUM_ITER))
     parser.add_argument('--NUM_RESTARTS', type=int, default= None,\
-    		help='number of restarts, DEFAULT dependent on dataset.')
+            help='number of restarts, DEFAULT dependent on dataset.')
+    parser.add_argument('--PRETRAIN', action='store_true', \
+            help='whether to pretrain CS_DIP neural network.')
     
     args = parser.parse_args()
 
@@ -43,6 +45,12 @@ def parse_args(config_file='configs.json'):
         args.NUM_MEASUREMENTS = SPECIFIC_CONFIG["num_measurements"]
     if not args.NUM_RESTARTS:
         args.NUM_RESTARTS = SPECIFIC_CONFIG["num_restarts"]
+
+    # set noise levels
+    args.VARIANCE_LIST = CONFIG["variance_list"]
+
+    # save config json file
+    args.configs_fname = config_file
 
     utils.check_args(args) # check to make sure args are correct
 

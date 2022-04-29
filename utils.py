@@ -2,12 +2,63 @@ import numpy as np
 import os
 import errno
 import parser
+import sys
+import json
+import argparse
 
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
 from torchvision import datasets,transforms
+
+default_print = print
+def print(*args):
+    default_print(*args)
+    sys.stdout.flush()
+
+def psnr(x, y, vmax=-1):
+    """
+     psnr - compute the Peack Signal to Noise Ratio
+
+       p = psnr(x,y,vmax);
+
+       defined by :
+           p = 10*log10( vmax^2 / |x-y|^2 )
+       |x-y|^2 = mean( (x(:)-y(:)).^2 )
+       if vmax is ommited, then
+           vmax = max(max(x(:)),max(y(:)))
+
+       Copyright (c) 2014 Gabriel Peyre
+    """
+
+    # vmax = np.finfo(x.dtype).max
+
+    if vmax < 0:
+        m1 = abs(x).max()
+        m2 = abs(y).max()
+        vmax = max(m1, m2)
+    d = np.mean((x - y) ** 2)
+    return 10 * 2 * np.log10(vmax) - np.log10(d)
+    return 10 * np.log10(vmax ** 2 / d)
+
+def get_noise(eta, args):
+    np.random.seed(0)
+    return np.random.normal(0, eta * (1.0 / args.NUM_MEASUREMENTS) ,args.NUM_MEASUREMENTS)
+
+def parse_pretrain_args(config_file='configs.json'):
+
+    if isinstance(config_file, str):
+        ALL_CONFIG = json.load(open(config_file))
+    elif isinstance(config_file, argparse.Namespace):
+        ALL_CONFIG = config_file
+    else:
+        raise NotImplementedError("config_file should be argparse.Namespace or str, instead of ", type(config_file))
+
+    PRETRAIN_CONFIG = ALL_CONFIG["data_agnostic_configs"]["pretrain"]["init_pretrain"]
+    LATENT_CODES_CONFIG = ALL_CONFIG["data_agnostic_configs"]["pretrain"]["init_latent_codes"]
+
+    return PRETRAIN_CONFIG, LATENT_CODES_CONFIG
 
 BATCH_SIZE = 1
 
@@ -108,18 +159,7 @@ class DCGAN_RETINO(nn.Module):
        
         return x
 
-def pretrain(net, args):
-    data_path = args.PRETRAIN_DATA_PATH
-    model_path = args.PRETRAIN_MODEL_PATH
 
-    if args.DATASET == 'xray':
-        raise NotImplementedError("rkan3 pretrain xray")
-    elif args.DATASET == 'mnist':
-        print("rkan3: pretraining mnist")
-    elif args.DATASET == 'retino':
-        raise NotImplementedError("rkan3 pretrain retino")
-
-    return net
 
 NGF = 64
 def init_dcgan(args):
@@ -133,11 +173,6 @@ def init_dcgan(args):
     elif args.DATASET == 'retino':
         net = DCGAN_RETINO(args.Z_DIM, NGF, args.IMG_SIZE,\
             args.NUM_CHANNELS, args.NUM_MEASUREMENTS)
-
-    # rkan3 TODO: load pretrain weights
-    # o.w. pretrain and save weights
-    if args.PRETRAIN:
-        net = pretrain()
 
     return net
 
@@ -213,7 +248,7 @@ def set_dtype(CUDA):
     else:
         return torch.FloatTensor
 
-def get_path_out(args, path_in):
+def get_path_out(args, path_in, old=False):
     fn = path_leaf(path_in[0]) # format filename from path
 
     if args.ALG == 'bm3d' or args.ALG == 'tval3':
@@ -221,8 +256,29 @@ def get_path_out(args, path_in):
     else:
         file_ext = 'npy' # if algorithm is implemented in python
 
-    path_out = 'reconstructions/{0}/{1}/meas{2}/im{3}.{4}'.format( \
-            args.DATASET, args.ALG, args.NUM_MEASUREMENTS, fn, file_ext)
+    # path_out = 'reconstructions/{0}/{1}/meas{2}/sigma_root({3})/im{4}.{5}'.format( \
+    #         args.DATASET, args.ALG, args.NUM_MEASUREMENTS, args.VARIANCE, fn, file_ext)
+
+    if "path_root" in args.__dict__: #used by plot.ipynb
+        if old:
+            path_out = args.path_root+'/{0}/{1}/meas{2}/im{3}.{4}'.format( \
+                args.DATASET, args.ALG, args.NUM_MEASUREMENTS, fn, file_ext)
+        else:
+            path_out = args.path_root+'/{0}/{1}/meas{2}/variance{3}/im{4}.{5}'.format( \
+                args.DATASET, args.ALG, args.NUM_MEASUREMENTS, args.VARIANCE, fn, file_ext)
+    else:
+        if "configs_fname" in args.__dict__:
+            recons_base_dir = "reconstructions" if "test" not in args.configs_fname else "reconstructions_test"
+        else:
+            recons_base_dir = "reconstructions"
+            
+        if old:
+            path_out = recons_base_dir+'/{0}/{1}/meas{2}/im{3}.{4}'.format( \
+                args.DATASET, args.ALG, args.NUM_MEASUREMENTS, fn, file_ext)
+        else:
+            path_out = recons_base_dir+'/{0}/{1}/meas{2}/variance{3}/im{4}.{5}'.format( \
+                args.DATASET, args.ALG, args.NUM_MEASUREMENTS, args.VARIANCE, fn, file_ext)
+
 
     full_path = os.getcwd()  + '/' + path_out
     return full_path
@@ -230,7 +286,7 @@ def get_path_out(args, path_in):
 
 def recons_exists(args, path_in):
     path_out = get_path_out(args, path_in)
-    print(path_out)
+    # print(path_out)
     if os.path.isfile(path_out):
         return True
     else:
@@ -265,6 +321,7 @@ def check_args(args): # check args for correctness
             raise ValueError('DEMO must be either True or False.')
 
 def convert_to_list(args): # returns list for NUM_MEAS, BATCH
+    # note, returns sigma list, not sigma**2
     if not isinstance(args.NUM_MEASUREMENTS, list):
         NUM_MEASUREMENTS_LIST = [args.NUM_MEASUREMENTS]
     else:
@@ -273,7 +330,11 @@ def convert_to_list(args): # returns list for NUM_MEAS, BATCH
         ALG_LIST = [args.ALG]
     else:
         ALG_LIST = args.ALG
-    return NUM_MEASUREMENTS_LIST, ALG_LIST
+    if not isinstance(args.VARIANCE_LIST, list):
+        VARIANCE_LIST = [args.VARIANCE_LIST]
+    else:
+        VARIANCE_LIST = args.VARIANCE_LIST
+    return NUM_MEASUREMENTS_LIST, ALG_LIST, VARIANCE_LIST
 
 def path_leaf(path):
     # if '/' in path and if '\\' in path:
