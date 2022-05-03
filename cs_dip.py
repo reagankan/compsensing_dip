@@ -72,13 +72,15 @@ def dip_estimator(args):
                 # calculate total variation loss 
                 tv_loss = (torch.sum(torch.abs(G[:,:,:,:-1] - G[:,:,:,1:]))\
                             + torch.sum(torch.abs(G[:,:,:-1,:] - G[:,:,1:,:]))) 
-
-                # calculate learned regularization loss
-                layers = net.parameters()
-                layer_means = torch.cat([layer.mean().view(1) for layer in layers])
-                lr_loss = torch.matmul(layer_means-mu,torch.matmul(sig_inv,layer_means-mu))
-                
-                total_loss = y_loss + lrc*lr_loss + tvc*tv_loss # total loss for iteration i
+            
+                # if needed, calculate learned regularization loss
+                if args.NO_LR:
+                    total_loss = y_loss + tvc*tv_loss # total loss for iteration i
+                else:
+                    layers = net.parameters()
+                    layer_means = torch.cat([layer.mean().view(1) for layer in layers])
+                    lr_loss = torch.matmul(layer_means-mu,torch.matmul(sig_inv,layer_means-mu))
+                    total_loss = y_loss + lrc*lr_loss + tvc*tv_loss # total loss for iteration i
                  
                 # stopping condition to account for optimizer convergence
                 if i >= args.NUM_ITER - EXIT_WINDOW: 

@@ -30,6 +30,8 @@ def parse_args(config_file='configs.json'):
             help='number of restarts, DEFAULT dependent on dataset.')
     parser.add_argument('--PRETRAIN', action='store_true', \
             help='whether to pretrain CS_DIP neural network.')
+    parser.add_argument('--NO_LR', action='store_true', \
+            help='whether to use learned regularization in recon loss.')
     
     args = parser.parse_args()
 
