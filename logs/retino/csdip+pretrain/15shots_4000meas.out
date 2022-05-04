@@ -1,0 +1,325 @@
+pytorch device cpu
+Namespace(DATASET='retino', ALG=['csdip'], NUM_MEASUREMENTS=[4000], DEMO='True', NUM_ITER=1000, NUM_RESTARTS=1, PRETRAIN=True, NO_LR=True, IMG_SIZE=128, NUM_CHANNELS=3, Z_DIM=32, LR_FOLDER='./learned_regularization/retino/', VARIANCE_LIST=[0, 10, 100, 1000], configs_fname='configs_15shots.json')
+NUM_MEASUREMENTS 4000
+im_path ('data/retino_demo/sub/1.jpg',)
+stdev = 0.0; var = 0.0
+Starting DIP estimation at time 8.05
+>> skipping LR
+ Starting restart 1 of 1 at time 8.85
+Loaded net and z from pretrained_weights/retino_demo/shots15/net_L2_4000.pth 
+	and pretrained_weights/retino_demo/shots15/latent_codes_L2_4000.pth
+	in 0.02 seconds
+	Initializing Z with 15 shots with MSE loss
+	estimate_initial_latent_codes total time 143.78s
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [2.52044773]
+  Time 263.69 seconds
+
+Finished DIP in 264 seconds
+im_path ('data/retino_demo/sub/2.jpg',)
+stdev = 0.0; var = 0.0
+Starting DIP estimation at time 272.66
+>> skipping LR
+ Starting restart 1 of 1 at time 272.8
+Loaded net and z from pretrained_weights/retino_demo/shots15/net_L2_4000.pth 
+	and pretrained_weights/retino_demo/shots15/latent_codes_L2_4000.pth
+	in 0.01 seconds
+	Initializing Z with 15 shots with MSE loss
+	estimate_initial_latent_codes total time 145.27s
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [2.96469474]
+  Time 267.73 seconds
+
+Finished DIP in 268 seconds
+im_path ('data/retino_demo/sub/3.jpg',)
+stdev = 0.0; var = 0.0
+Starting DIP estimation at time 540.66
+>> skipping LR
+ Starting restart 1 of 1 at time 540.79
+Loaded net and z from pretrained_weights/retino_demo/shots15/net_L2_4000.pth 
+	and pretrained_weights/retino_demo/shots15/latent_codes_L2_4000.pth
+	in 0.02 seconds
+	Initializing Z with 15 shots with MSE loss
+	estimate_initial_latent_codes total time 143.27s
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [2.08961797]
+  Time 262.11 seconds
+
+Finished DIP in 262 seconds
+im_path ('data/retino_demo/sub/4.jpg',)
+stdev = 0.0; var = 0.0
+Starting DIP estimation at time 803.03
+>> skipping LR
+ Starting restart 1 of 1 at time 803.16
+Loaded net and z from pretrained_weights/retino_demo/shots15/net_L2_4000.pth 
+	and pretrained_weights/retino_demo/shots15/latent_codes_L2_4000.pth
+	in 0.01 seconds
+	Initializing Z with 15 shots with MSE loss
+	estimate_initial_latent_codes total time 147.93s
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [1.8729229]
+  Time 279.68 seconds
+
+Finished DIP in 280 seconds
+im_path ('data/retino_demo/sub/5.jpg',)
+stdev = 0.0; var = 0.0
+Starting DIP estimation at time 1082.98
+>> skipping LR
+ Starting restart 1 of 1 at time 1083.14
+Loaded net and z from pretrained_weights/retino_demo/shots15/net_L2_4000.pth 
+	and pretrained_weights/retino_demo/shots15/latent_codes_L2_4000.pth
+	in 0.02 seconds
+	Initializing Z with 15 shots with MSE loss
+	estimate_initial_latent_codes total time 154.32s
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [1.92987847]
+  Time 285.43 seconds
+
+Finished DIP in 286 seconds
+im_path ('data/retino_demo/sub/1.jpg',)
+stdev = 3.1622776601683795; var = 10.000000000000002
+Starting DIP estimation at time 1368.73
+>> skipping LR
+ Starting restart 1 of 1 at time 1368.89
+Loaded net and z from pretrained_weights/retino_demo/shots15/net_L2_4000.pth 
+	and pretrained_weights/retino_demo/shots15/latent_codes_L2_4000.pth
+	in 0.02 seconds
+	Initializing Z with 15 shots with MSE loss
+	estimate_initial_latent_codes total time 155.87s
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [3.36972761]
+  Time 275.32 seconds
+
+Finished DIP in 275 seconds
+im_path ('data/retino_demo/sub/2.jpg',)
+stdev = 3.1622776601683795; var = 10.000000000000002
+Starting DIP estimation at time 1644.33
+>> skipping LR
+ Starting restart 1 of 1 at time 1644.46
+Loaded net and z from pretrained_weights/retino_demo/shots15/net_L2_4000.pth 
+	and pretrained_weights/retino_demo/shots15/latent_codes_L2_4000.pth
+	in 0.01 seconds
+	Initializing Z with 15 shots with MSE loss
+	estimate_initial_latent_codes total time 144.49s
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [8.70191765]
+  Time 265.22 seconds
+
+Finished DIP in 265 seconds
+im_path ('data/retino_demo/sub/3.jpg',)
+stdev = 3.1622776601683795; var = 10.000000000000002
+Starting DIP estimation at time 1909.81
+>> skipping LR
+ Starting restart 1 of 1 at time 1909.93
+Loaded net and z from pretrained_weights/retino_demo/shots15/net_L2_4000.pth 
+	and pretrained_weights/retino_demo/shots15/latent_codes_L2_4000.pth
+	in 0.01 seconds
+	Initializing Z with 15 shots with MSE loss
+	estimate_initial_latent_codes total time 149.0s
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [1.67284381]
+  Time 272.68 seconds
+
+Finished DIP in 273 seconds
+im_path ('data/retino_demo/sub/4.jpg',)
+stdev = 3.1622776601683795; var = 10.000000000000002
+Starting DIP estimation at time 2182.75
+>> skipping LR
+ Starting restart 1 of 1 at time 2182.88
+Loaded net and z from pretrained_weights/retino_demo/shots15/net_L2_4000.pth 
+	and pretrained_weights/retino_demo/shots15/latent_codes_L2_4000.pth
+	in 0.02 seconds
+	Initializing Z with 15 shots with MSE loss
+	estimate_initial_latent_codes total time 174.75s
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [2.0060432]
+  Time 294.59 seconds
+
+Finished DIP in 295 seconds
+im_path ('data/retino_demo/sub/5.jpg',)
+stdev = 3.1622776601683795; var = 10.000000000000002
+Starting DIP estimation at time 2477.59
+>> skipping LR
+ Starting restart 1 of 1 at time 2477.72
+Loaded net and z from pretrained_weights/retino_demo/shots15/net_L2_4000.pth 
+	and pretrained_weights/retino_demo/shots15/latent_codes_L2_4000.pth
+	in 0.01 seconds
+	Initializing Z with 15 shots with MSE loss
+	estimate_initial_latent_codes total time 143.31s
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [1.50945318]
+  Time 262.19 seconds
+
+Finished DIP in 262 seconds
+im_path ('data/retino_demo/sub/1.jpg',)
+stdev = 10.0; var = 100.0
+Starting DIP estimation at time 2740.04
+>> skipping LR
+ Starting restart 1 of 1 at time 2740.17
+Loaded net and z from pretrained_weights/retino_demo/shots15/net_L2_4000.pth 
+	and pretrained_weights/retino_demo/shots15/latent_codes_L2_4000.pth
+	in 0.01 seconds
+	Initializing Z with 15 shots with MSE loss
+	estimate_initial_latent_codes total time 143.73s
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [1.99608934]
+  Time 261.95 seconds
+
+Finished DIP in 262 seconds
+im_path ('data/retino_demo/sub/2.jpg',)
+stdev = 10.0; var = 100.0
+Starting DIP estimation at time 3002.24
+>> skipping LR
+ Starting restart 1 of 1 at time 3002.37
+Loaded net and z from pretrained_weights/retino_demo/shots15/net_L2_4000.pth 
+	and pretrained_weights/retino_demo/shots15/latent_codes_L2_4000.pth
+	in 0.01 seconds
+	Initializing Z with 15 shots with MSE loss
+	estimate_initial_latent_codes total time 144.14s
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [2.38667941]
+  Time 263.94 seconds
+
+Finished DIP in 264 seconds
+im_path ('data/retino_demo/sub/3.jpg',)
+stdev = 10.0; var = 100.0
+Starting DIP estimation at time 3266.42
+>> skipping LR
+ Starting restart 1 of 1 at time 3266.55
+Loaded net and z from pretrained_weights/retino_demo/shots15/net_L2_4000.pth 
+	and pretrained_weights/retino_demo/shots15/latent_codes_L2_4000.pth
+	in 0.01 seconds
+	Initializing Z with 15 shots with MSE loss
+	estimate_initial_latent_codes total time 142.79s
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [1.24308717]
+  Time 261.45 seconds
+
+Finished DIP in 262 seconds
+im_path ('data/retino_demo/sub/4.jpg',)
+stdev = 10.0; var = 100.0
+Starting DIP estimation at time 3528.13
+>> skipping LR
+ Starting restart 1 of 1 at time 3528.26
+Loaded net and z from pretrained_weights/retino_demo/shots15/net_L2_4000.pth 
+	and pretrained_weights/retino_demo/shots15/latent_codes_L2_4000.pth
+	in 0.01 seconds
+	Initializing Z with 15 shots with MSE loss
+	estimate_initial_latent_codes total time 143.03s
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [1.873402]
+  Time 261.38 seconds
+
+Finished DIP in 262 seconds
+im_path ('data/retino_demo/sub/5.jpg',)
+stdev = 10.0; var = 100.0
+Starting DIP estimation at time 3789.77
+>> skipping LR
+ Starting restart 1 of 1 at time 3789.9
+Loaded net and z from pretrained_weights/retino_demo/shots15/net_L2_4000.pth 
+	and pretrained_weights/retino_demo/shots15/latent_codes_L2_4000.pth
+	in 0.01 seconds
+	Initializing Z with 15 shots with MSE loss
+	estimate_initial_latent_codes total time 143.45s
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [2.61535597]
+  Time 260.9 seconds
+
+Finished DIP in 261 seconds
+im_path ('data/retino_demo/sub/1.jpg',)
+stdev = 31.622776601683793; var = 1000.0
+Starting DIP estimation at time 4050.91
+>> skipping LR
+ Starting restart 1 of 1 at time 4051.05
+Loaded net and z from pretrained_weights/retino_demo/shots15/net_L2_4000.pth 
+	and pretrained_weights/retino_demo/shots15/latent_codes_L2_4000.pth
+	in 0.01 seconds
+	Initializing Z with 15 shots with MSE loss
+	estimate_initial_latent_codes total time 140.86s
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [1.43366909]
+  Time 264.59 seconds
+
+Finished DIP in 265 seconds
+im_path ('data/retino_demo/sub/2.jpg',)
+stdev = 31.622776601683793; var = 1000.0
+Starting DIP estimation at time 4315.75
+>> skipping LR
+ Starting restart 1 of 1 at time 4315.88
+Loaded net and z from pretrained_weights/retino_demo/shots15/net_L2_4000.pth 
+	and pretrained_weights/retino_demo/shots15/latent_codes_L2_4000.pth
+	in 0.01 seconds
+	Initializing Z with 15 shots with MSE loss
+	estimate_initial_latent_codes total time 150.54s
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [3.08065176]
+  Time 277.16 seconds
+
+Finished DIP in 277 seconds
+im_path ('data/retino_demo/sub/3.jpg',)
+stdev = 31.622776601683793; var = 1000.0
+Starting DIP estimation at time 4593.18
+>> skipping LR
+ Starting restart 1 of 1 at time 4593.33
+Loaded net and z from pretrained_weights/retino_demo/shots15/net_L2_4000.pth 
+	and pretrained_weights/retino_demo/shots15/latent_codes_L2_4000.pth
+	in 0.02 seconds
+	Initializing Z with 15 shots with MSE loss
+	estimate_initial_latent_codes total time 147.0s
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [1.55529714]
+  Time 266.5 seconds
+
+Finished DIP in 267 seconds
+im_path ('data/retino_demo/sub/4.jpg',)
+stdev = 31.622776601683793; var = 1000.0
+Starting DIP estimation at time 4859.94
+>> skipping LR
+ Starting restart 1 of 1 at time 4860.07
+Loaded net and z from pretrained_weights/retino_demo/shots15/net_L2_4000.pth 
+	and pretrained_weights/retino_demo/shots15/latent_codes_L2_4000.pth
+	in 0.01 seconds
+	Initializing Z with 15 shots with MSE loss
+	estimate_initial_latent_codes total time 141.12s
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [2.31869197]
+  Time 258.79 seconds
+
+Finished DIP in 259 seconds
+im_path ('data/retino_demo/sub/5.jpg',)
+stdev = 31.622776601683793; var = 1000.0
+Starting DIP estimation at time 5118.98
+>> skipping LR
+ Starting restart 1 of 1 at time 5119.11
+Loaded net and z from pretrained_weights/retino_demo/shots15/net_L2_4000.pth 
+	and pretrained_weights/retino_demo/shots15/latent_codes_L2_4000.pth
+	in 0.01 seconds
+	Initializing Z with 15 shots with MSE loss
+	estimate_initial_latent_codes total time 145.03s
+Reconstructing with 1000 iters
+  Finished restart 1 of 1
+  Best Loss [2.41606903]
+  Time 278.52 seconds
+
+Finished DIP in 279 seconds
+Reconstructions generated!
+Total Time:  5395.64 seconds
