@@ -12,20 +12,20 @@ More details on the proposed methodology and experiment conclusions can be found
 - [Project Proposal](https://docs.google.com/document/d/1gct7M7HHML8W3GIbRsC2FNo0RVHoUHDUl29gsbPmSGs/edit?usp=sharing)
     - (update): Algorithm 1 is not implemented. Instead, pre-existing learned regularization parameters are used in experiments.
 - [Project Presentation](https://docs.google.com/presentation/d/1c1cweUurac37nu8uc4AZj3bMZYWgy6U41p2nVMTA7W0/edit?usp=sharing)
-- [Project Report]() 
+- [Project Report](CSE_8803_Report.pdf) 
 
 
 Here are the results of comparing (**`csdip`**) and (**`csdip+{num_shots}`**) on the STARE retinopathy dataset:
 
-<center><img src="presentation_plots/retino_psnr_percent_change.png" alt="mnist_reconstr" width="400"></center>
+<center><img src="latex_files/proposed_vs_baseline.png" alt="" width="800"></center>
 
 Least noisy & compressed                 | Most noisy & compressed
 -----------------------------------------|-----------------------------------------
-<img src="presentation_plots/retino_0var_8000meas.png" alt="mnist_reconstr" width="400"> | <img src="presentation_plots/retino_1000var_1000meas.png" alt="mnist_reconstr" width="400">
+<img src="latex_files/retino_0var_8000meas.png" alt="" width="400"> | <img src="latex_files/retino_1000var_1000meas.png" alt="" width="400">
 
 PSNR vs noise variance                 | PSNR vs number of measurements
 -----------------------------------------|-----------------------------------------
-<img src="presentation_plots/retino_psnr_vs_noise.png" alt="mnist_reconstr" width="400"> | <img src="presentation_plots/retino_psnr_vs_meas.png" alt="mnist_reconstr" width="400">
+<img src="latex_files/retino_psnr_vs_noise.png" alt="" width="400"> | <img src="latex_files/retino_psnr_vs_meas.png" alt="" width="400">
 
 ---
 
