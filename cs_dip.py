@@ -10,9 +10,9 @@ import sys
 from utils import print
 from pretrain import pretrain, estimate_initial_latent_codes
 
-# args = parser.parse_args('configs.json') 
+args = parser.parse_args('configs.json') 
 # args = parser.parse_args('configs_test.json') 
-args = parser.parse_args('configs_15shots.json')
+# args = parser.parse_args('configs_15shots.json')
 
 CUDA = torch.cuda.is_available()
 dtype = utils.set_dtype(CUDA)
@@ -27,6 +27,8 @@ def dip_estimator(args):
 
         total_t0 = time.perf_counter()
         print(f"Starting DIP estimation at time {round(total_t0, 2)}")
+        if args.NO_LR:
+            print(">> skipping LR")
 
         y = torch.FloatTensor(y_batch_val).type(dtype) # init measurements y
         A = torch.FloatTensor(A_val).type(dtype)       # init measurement matrix A
