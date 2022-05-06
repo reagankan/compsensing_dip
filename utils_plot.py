@@ -125,7 +125,9 @@ def set_kwargs(dataset):
                   'wavelet':{"fmt":'b-', "label":'Lasso-DB4', "marker":"D", "markersize":7,"capsize":4., "linewidth":1, "elinewidth":1, "markerfacecolor":'None'},
                    'bm3d':{"fmt":'o-', "label":'BM3D-AMP', "marker":"D", "markersize":7,"capsize":4., "linewidth":1, "elinewidth":1, "markerfacecolor":'None'},
                    'tval3':{"fmt":'v-', "label":'TVAL3', "marker":"D", "markersize":7,"capsize":4., "linewidth":1, "elinewidth":1, "markerfacecolor":'None'},
-                   'csdip+15':{"fmt":'c-', "label":'csdip+15', "marker":"^", "markersize":7,"capsize":4., "linewidth":1, "elinewidth":1},
+                   'csdip+lr':{"fmt":'c-', "label":'csdip+lr', "marker":"^", "markersize":7,"capsize":4., "linewidth":1, "elinewidth":1},
+                   'csdip+15':{"fmt":'m-', "label":'csdip+15', "marker":"^", "markersize":7,"capsize":4., "linewidth":1, "elinewidth":1},
+                   'csdip+lr+15':{"fmt":'r-', "label":'csdip+lr+15', "marker":"^", "markersize":7,"capsize":4., "linewidth":1, "elinewidth":1},
                   }
 
     for k in KWARGS_DICT:
@@ -146,7 +148,7 @@ def plot_format(y_min, y_max, args):
     else:
         plt.xlabel(args.xlabel)
     plt.xticks(args.xticks,args.xticks, rotation=270)
-    plt.legend(loc='upper right')
+    plt.legend(loc='lower right')
 
 def plot_mse(mse_alg, args, kwargs):
     y_temp = []
@@ -180,7 +182,7 @@ NUM_PLOT = 5
 def set_axes(alg_name, ax):
     # ax.get_xaxis().set_visible(False)
     ax.get_yaxis().set_ticks([])
-    ax.get_yaxis().set_label_coords(-0.5,0) # (0, 0) is bottom left, (0.5, 0.5) is center, etc.
+    ax.get_yaxis().set_label_coords(-0.75,0) # (0, 0) is bottom left, (0.5, 0.5) is center, etc.
     ax.set_ylabel(alg_name, fontdict=dict(weight='bold'))
 
 def frame_image(image, cmap = None, axis_dict=None):
@@ -193,8 +195,11 @@ def frame_image(image, cmap = None, axis_dict=None):
         
         label = axis_dict.get("label")
         bold = axis_dict.get("bold")
+        underline = axis_dict.get("underline")
         if bold:
             axis.set_xlabel(label, fontdict=dict(weight='bold'))
+        elif underline:
+            axis.set_xlabel(f"_{label}_", fontdict=dict(style='italic'))
         else:
             axis.set_xlabel(label)
     else:
